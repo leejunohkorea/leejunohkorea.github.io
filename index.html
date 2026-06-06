@@ -5,129 +5,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>이준오 대표 | 굿인사이트</title>
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
-      color: #222;
-      background: #f7f8fa;
-      line-height: 1.6;
+      font-family: Arial, 'Noto Sans KR', sans-serif;
+      color: #1f2937;
+      background: #f6f7fb;
+      line-height: 1.65;
     }
-
     a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
 
     header {
-      background: #ffffff;
-      padding: 18px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      padding: 16px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      gap: 20px;
     }
 
-    header img {
-      height: 42px;
+    header img { height: 44px; }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-weight: 700;
+      font-size: 15px;
     }
 
-    nav a {
-      margin-left: 22px;
-      font-weight: 600;
-      color: #333;
-    }
+    nav a { color: #111827; }
+    nav a:hover { color: #0e7490; }
 
     .hero {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
-      align-items: center;
-      padding: 90px 8%;
-      background: linear-gradient(135deg, #0f172a, #164e63);
+      padding: 90px 7%;
+      background: linear-gradient(135deg, #0f172a, #155e75);
       color: white;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: #67e8f9;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
     }
 
     .hero h1 {
-      font-size: 52px;
-      margin-bottom: 20px;
-      line-height: 1.2;
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.12;
+      margin: 0 0 24px;
     }
 
     .hero p {
-      font-size: 21px;
-      opacity: 0.92;
+      font-size: clamp(17px, 2vw, 22px);
+      opacity: 0.94;
+      margin-bottom: 28px;
     }
 
-    .hero img {
-      width: 100%;
-      max-width: 360px;
-      border-radius: 24px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    .hero-photo {
+      border-radius: 28px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+      overflow: hidden;
+      background: white;
+    }
+
+    .btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 24px;
-      padding: 14px 24px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 800;
       background: #ff6b00;
       color: white;
-      border-radius: 999px;
-      font-weight: 700;
+      border: 2px solid #ff6b00;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: white;
+      border-color: rgba(255,255,255,0.65);
     }
 
     section {
-      padding: 70px 8%;
+      padding: 72px 7%;
     }
 
+    .white { background: white; }
+
     .section-title {
-      font-size: 34px;
-      margin-bottom: 12px;
+      font-size: clamp(28px, 4vw, 40px);
+      margin: 0 0 12px;
       color: #0f172a;
     }
 
     .section-desc {
-      color: #555;
-      margin-bottom: 36px;
+      color: #5b6472;
+      margin: 0 0 34px;
       font-size: 18px;
     }
 
     .stats {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      background: white;
+      gap: 18px;
     }
 
     .stat {
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 18px;
+      background: white;
+      padding: 28px 20px;
+      border-radius: 20px;
       text-align: center;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.07);
     }
 
     .stat strong {
+      display: block;
       font-size: 34px;
       color: #0e7490;
-      display: block;
+      margin-bottom: 6px;
     }
 
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 20px;
     }
 
     .card {
       background: white;
       padding: 28px;
-      border-radius: 18px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      border-radius: 20px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.07);
+      border: 1px solid #eef2f7;
     }
 
     .card h3 {
-      margin-top: 0;
+      margin: 0 0 10px;
       color: #0f172a;
+      font-size: 22px;
     }
 
     .gallery {
@@ -138,10 +168,10 @@
 
     .gallery img {
       width: 100%;
-      height: 230px;
+      height: 245px;
       object-fit: cover;
-      border-radius: 16px;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.1);
+      border-radius: 18px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.11);
     }
 
     .videos {
@@ -153,76 +183,159 @@
     .video {
       background: white;
       padding: 20px;
-      border-radius: 18px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      border-radius: 20px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.07);
+    }
+
+    .video h3 {
+      margin: 0 0 14px;
+      color: #0f172a;
     }
 
     .video iframe {
       width: 100%;
-      height: 260px;
+      aspect-ratio: 16 / 9;
       border: 0;
-      border-radius: 12px;
+      border-radius: 14px;
     }
 
-    .links {
+    .press-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .press-card {
+      background: white;
+      padding: 22px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      border-left: 5px solid #0e7490;
+      transition: 0.2s;
+    }
+
+    .press-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.1);
+    }
+
+    .press-date {
+      color: #0e7490;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .press-card h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #111827;
+      line-height: 1.45;
+    }
+
+    .channels {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
     }
 
-    .link-box {
+    .channel {
       background: white;
-      padding: 28px;
-      border-radius: 18px;
+      padding: 28px 20px;
+      border-radius: 20px;
       text-align: center;
-      font-weight: 700;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      font-weight: 900;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.07);
+      color: #111827;
+    }
+
+    .channel:hover {
+      color: #0e7490;
     }
 
     .contact {
-      background: #0f172a;
+      background: linear-gradient(135deg, #0f172a, #111827);
       color: white;
       text-align: center;
     }
 
-    .contact h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
+    .contact .section-title {
+      color: white;
+    }
+
+    .contact p {
+      color: rgba(255,255,255,0.82);
+      font-size: 18px;
     }
 
     footer {
-      padding: 30px;
+      background: white;
       text-align: center;
-      color: #777;
-      background: #fff;
+      padding: 30px;
+      color: #6b7280;
+      font-size: 14px;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
+      .stats, .cards, .press-grid, .channels {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
       header {
+        position: static;
         flex-direction: column;
-        gap: 14px;
+        align-items: flex-start;
+        padding: 16px 5%;
+      }
+
+      header img { height: 38px; }
+
+      nav {
+        gap: 10px;
+        font-size: 14px;
       }
 
       nav a {
-        margin: 0 8px;
-        font-size: 14px;
+        background: #f1f5f9;
+        padding: 7px 10px;
+        border-radius: 999px;
       }
 
       .hero {
         grid-template-columns: 1fr;
-        text-align: center;
+        padding: 56px 5%;
+        text-align: left;
       }
 
-      .hero h1 {
-        font-size: 36px;
+      .hero-photo {
+        max-width: 340px;
+        margin: 0 auto;
       }
 
-      .stats,
-      .cards,
-      .gallery,
-      .videos,
-      .links {
+      section {
+        padding: 52px 5%;
+      }
+
+      .stats, .cards, .gallery, .videos, .press-grid, .channels {
         grid-template-columns: 1fr;
+      }
+
+      .gallery img {
+        height: auto;
+      }
+
+      .btns {
+        flex-direction: column;
+      }
+
+      .btn {
+        text-align: center;
+        width: 100%;
       }
     }
   </style>
@@ -231,11 +344,12 @@
 <body>
 
 <header>
-  <img src="logo.png.png" alt="굿인사이트 로고">
+  <a href="#"><img src="logo.png.png" alt="굿인사이트 로고"></a>
   <nav>
     <a href="#about">소개</a>
     <a href="#programs">교육분야</a>
     <a href="#gallery">강의현장</a>
+    <a href="#press">언론보도</a>
     <a href="#videos">영상</a>
     <a href="#contact">문의</a>
   </nav>
@@ -243,21 +357,24 @@
 
 <section class="hero">
   <div>
+    <div class="eyebrow">GOOD INSIGHT · HRD CONSULTING</div>
     <h1>조직의 성장,<br>리더의 변화,<br>그리고 교육의 감동</h1>
     <p>
       이준오 대표는 AI, 리더십, 조직소통, 감정관리, 예술인문학을 기반으로
       기업과 공공기관의 성장을 돕는 HRD 전문 강사입니다.
     </p>
-    <a class="btn" href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">
-      교육 문의하기
-    </a>
+    <div class="btns">
+      <a class="btn" href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">교육 문의하기</a>
+      <a class="btn secondary" href="https://blog.naver.com/hr_jasonlee" target="_blank">블로그 보기</a>
+    </div>
   </div>
-  <div>
+
+  <div class="hero-photo">
     <img src="profile.jpg.jpg" alt="이준오 대표 프로필 사진">
   </div>
 </section>
 
-<section id="about">
+<section id="about" class="white">
   <h2 class="section-title">Good Insight</h2>
   <p class="section-desc">
     문화, 예술, AI를 접목한 HR교육 전문 브랜드. 사람의 행동심리와 조직의 변화를 연결하는 교육을 설계합니다.
@@ -303,7 +420,7 @@
   </div>
 </section>
 
-<section id="gallery">
+<section id="gallery" class="white">
   <h2 class="section-title">강의 현장</h2>
   <p class="section-desc">기업, 공공기관, 대학, 병원 등 다양한 현장에서 검증된 강의 경험</p>
 
@@ -316,7 +433,74 @@
   </div>
 </section>
 
-<section id="videos">
+<section id="press">
+  <h2 class="section-title">언론보도 및 주요 활동</h2>
+  <p class="section-desc">AI, 청렴, 리더십, 공감 커뮤니케이션, 인문학 교육 현장에서 축적된 주요 활동입니다.</p>
+
+  <div class="press-grid">
+    <a class="press-card" href="https://www.khan.co.kr/article/202512181555002" target="_blank">
+      <div class="press-date">2025.12.18</div>
+      <h3>집단지성, AI 시대 조직의 생존전략</h3>
+    </a>
+
+    <a class="press-card" href="https://www.sidae.com/article/2025082716460839851" target="_blank">
+      <div class="press-date">2025.08.27</div>
+      <h3>AI 원격 얼굴인식 범죄 대응, 인권 침해 아니다</h3>
+    </a>
+
+    <a class="press-card" href="http://www.gbjanews.kr/default/index_view_page.php?idx=185945" target="_blank">
+      <div class="press-date">2025.08.19</div>
+      <h3>즐기면서 배우는 청렴, 경주시 ‘청렴오락실’ 성황</h3>
+    </a>
+
+    <a class="press-card" href="https://www.nspna.com/country/?mode=view&newsid=769362" target="_blank">
+      <div class="press-date">2025.07.31</div>
+      <h3>경북교육청, 특수교육지원 인력 역량 강화 연수 개최</h3>
+    </a>
+
+    <a class="press-card" href="https://daily.hankooki.com/news/articleView.html?idxno=1247464" target="_blank">
+      <div class="press-date">2025.07.23</div>
+      <h3>아산교육지원청, 2025년 하반기 행정실장 회의 개최</h3>
+    </a>
+
+    <a class="press-card" href="https://www.nongchuktoday.com/news/articleView.html?idxno=3926" target="_blank">
+      <div class="press-date">2025.06.19</div>
+      <h3>국립농업박물관, ‘시나브로 농촌에 스며들다’ 교육 운영</h3>
+    </a>
+
+    <a class="press-card" href="https://view.asiae.co.kr/article/2024060612255709625" target="_blank">
+      <div class="press-date">2025.08.03</div>
+      <h3>‘소통과 공감’, 이강덕 포항시장과 함께하는 청렴 토크콘서트</h3>
+    </a>
+
+    <a class="press-card" href="https://www.breaknews.com/1071874" target="_blank">
+      <div class="press-date">2024.11.19</div>
+      <h3>평택시, 2024년 4분기 통합방위협의회 회의 개최</h3>
+    </a>
+
+    <a class="press-card" href="http://www.toyonet.co.kr/bbs/board.php?bo_table=news&wr_id=28425" target="_blank">
+      <div class="press-date">2024.10.14</div>
+      <h3>송파구시설관리공단, 차세대 여성 리더 양성 특별교육</h3>
+    </a>
+
+    <a class="press-card" href="https://www.viva100.com/20240501010000130" target="_blank">
+      <div class="press-date">2024.05.01</div>
+      <h3>사천시, 직원 친절마인드 향상 교육 실시</h3>
+    </a>
+
+    <a class="press-card" href="https://www.viva100.com/20191115010005148" target="_blank">
+      <div class="press-date">2019.11.15</div>
+      <h3>나주시, 시민감사관 및 공직자 청렴워크숍 개최</h3>
+    </a>
+
+    <a class="press-card" href="https://www.newsworker.co.kr/news/articleView.html?idxno=38279" target="_blank">
+      <div class="press-date">2019.08.28</div>
+      <h3>영광군, 청렴콘서트 개최 및 청렴실천 결의대회</h3>
+    </a>
+  </div>
+</section>
+
+<section id="videos" class="white">
   <h2 class="section-title">강의 영상</h2>
   <p class="section-desc">주요 강의 콘텐츠를 영상으로 확인하실 수 있습니다.</p>
 
@@ -350,22 +534,23 @@
 
 <section>
   <h2 class="section-title">연결 채널</h2>
-  <p class="section-desc">블로그, 유튜브, 저서 정보를 통해 이준오 대표의 교육 콘텐츠를 더 깊이 확인할 수 있습니다.</p>
+  <p class="section-desc">블로그, 유튜브, 저서 정보를 통해 교육 콘텐츠와 전문성을 더 깊이 확인할 수 있습니다.</p>
 
-  <div class="links">
-    <a class="link-box" href="https://blog.naver.com/hr_jasonlee" target="_blank">네이버 블로그</a>
-    <a class="link-box" href="https://www.youtube.com/channel/UCr6EQxSkWiNmDn9S8FNzSYA" target="_blank">유튜브 채널</a>
-    <a class="link-box" href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjky&x_csa=%7B%22workType%22%3A%22book%22%2C%22fromUi%22%3A%22kb%22%7D&pkid=1&os=31529684&qvt=0&query=%EC%9D%B4%EC%A4%80%EC%98%A4%20%EB%8F%84%EC%84%9C" target="_blank">저서 보기</a>
-    <a class="link-box" href="mailto:leejunohkorea@gmail.com">이메일 문의</a>
+  <div class="channels">
+    <a class="channel" href="https://blog.naver.com/hr_jasonlee" target="_blank">네이버 블로그</a>
+    <a class="channel" href="https://www.youtube.com/channel/UCr6EQxSkWiNmDn9S8FNzSYA" target="_blank">유튜브 채널</a>
+    <a class="channel" href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjky&x_csa=%7B%22workType%22%3A%22book%22%2C%22fromUi%22%3A%22kb%22%7D&pkid=1&os=31529684&qvt=0&query=%EC%9D%B4%EC%A4%80%EC%98%A4%20%EB%8F%84%EC%84%9C" target="_blank">저서 보기</a>
+    <a class="channel" href="mailto:leejunohkorea@gmail.com">이메일 문의</a>
   </div>
 </section>
 
 <section id="contact" class="contact">
-  <h2>교육 문의</h2>
+  <h2 class="section-title">교육 문의</h2>
   <p>기업교육, 공공기관 교육, 대학 특강, 조직활성화 워크숍 문의를 남겨주세요.</p>
-  <a class="btn" href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">
-    네이버폼으로 문의하기
-  </a>
+  <div class="btns" style="justify-content:center;">
+    <a class="btn" href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">네이버폼으로 문의하기</a>
+    <a class="btn secondary" href="https://www.youtube.com/channel/UCr6EQxSkWiNmDn9S8FNzSYA" target="_blank">강의 영상 더보기</a>
+  </div>
 </section>
 
 <footer>
