@@ -1,10 +1,376 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<title>이준오 대표</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이준오 대표 | 굿인사이트</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+      color: #222;
+      background: #f7f8fa;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    header {
+      background: #ffffff;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    header img {
+      height: 42px;
+    }
+
+    nav a {
+      margin-left: 22px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      padding: 90px 8%;
+      background: linear-gradient(135deg, #0f172a, #164e63);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 21px;
+      opacity: 0.92;
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 14px 24px;
+      background: #ff6b00;
+      color: white;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+
+    .section-desc {
+      color: #555;
+      margin-bottom: 36px;
+      font-size: 18px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      background: white;
+    }
+
+    .stat {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .stat strong {
+      font-size: 34px;
+      color: #0e7490;
+      display: block;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #0f172a;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.1);
+    }
+
+    .videos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .video {
+      background: white;
+      padding: 20px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .video iframe {
+      width: 100%;
+      height: 260px;
+      border: 0;
+      border-radius: 12px;
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .link-box {
+      background: white;
+      padding: 28px;
+      border-radius: 18px;
+      text-align: center;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .contact {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      padding: 30px;
+      text-align: center;
+      color: #777;
+      background: #fff;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 14px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .stats,
+      .cards,
+      .gallery,
+      .videos,
+      .links {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<h1>이준오 대표 홈페이지</h1>
-<p>AI · 리더십 · 조직소통 전문강사</p>
+
+<header>
+  <img src="logo.png.png" alt="굿인사이트 로고">
+  <nav>
+    <a href="#about">소개</a>
+    <a href="#programs">교육분야</a>
+    <a href="#gallery">강의현장</a>
+    <a href="#videos">영상</a>
+    <a href="#contact">문의</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>조직의 성장,<br>리더의 변화,<br>그리고 교육의 감동</h1>
+    <p>
+      이준오 대표는 AI, 리더십, 조직소통, 감정관리, 예술인문학을 기반으로
+      기업과 공공기관의 성장을 돕는 HRD 전문 강사입니다.
+    </p>
+    <a class="btn" href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">
+      교육 문의하기
+    </a>
+  </div>
+  <div>
+    <img src="profile.jpg.jpg" alt="이준오 대표 프로필 사진">
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">Good Insight</h2>
+  <p class="section-desc">
+    문화, 예술, AI를 접목한 HR교육 전문 브랜드. 사람의 행동심리와 조직의 변화를 연결하는 교육을 설계합니다.
+  </p>
+
+  <div class="stats">
+    <div class="stat"><strong>300+</strong>함께한 고객사</div>
+    <div class="stat"><strong>2,000+</strong>누적 강의</div>
+    <div class="stat"><strong>100,000+</strong>누적 교육생</div>
+    <div class="stat"><strong>4.8/5</strong>강의 만족도</div>
+  </div>
+</section>
+
+<section id="programs">
+  <h2 class="section-title">대표 교육 분야</h2>
+  <p class="section-desc">조직의 문제를 교육 언어로 해석하고, 현장에서 실행 가능한 변화로 연결합니다.</p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>생성형 AI 활용</h3>
+      <p>업무 생산성, AI 협업, 프롬프트 활용, 조직 내 AI 리터러시 교육</p>
+    </div>
+    <div class="card">
+      <h3>리더십</h3>
+      <p>성과관리, 동기부여, 관계관리, 팀장 리더십, 셀프리더십</p>
+    </div>
+    <div class="card">
+      <h3>조직 커뮤니케이션</h3>
+      <p>공감소통, 갈등관리, 피드백, 세대 간 커뮤니케이션</p>
+    </div>
+    <div class="card">
+      <h3>감정관리</h3>
+      <p>감정노동, 스트레스 관리, 번아웃 예방, 회복탄력성</p>
+    </div>
+    <div class="card">
+      <h3>예술 인문학</h3>
+      <p>클래식, 명화, 예술가의 삶을 통한 조직과 사람 이해</p>
+    </div>
+    <div class="card">
+      <h3>조직활성화·청렴</h3>
+      <p>팀빌딩, 조직문화, 청렴윤리, 참여형 워크숍</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2 class="section-title">강의 현장</h2>
+  <p class="section-desc">기업, 공공기관, 대학, 병원 등 다양한 현장에서 검증된 강의 경험</p>
+
+  <div class="gallery">
+    <img src="lecture1.jpg.png" alt="강의 현장 사진 1">
+    <img src="lecture2.jpg.png" alt="강의 현장 사진 2">
+    <img src="lecture3.jpg.png" alt="강의 현장 사진 3">
+    <img src="lecture4.jpg.png" alt="강의 현장 사진 4">
+    <img src="lecture5.jpg.png" alt="강의 현장 사진 5">
+  </div>
+</section>
+
+<section id="videos">
+  <h2 class="section-title">강의 영상</h2>
+  <p class="section-desc">주요 강의 콘텐츠를 영상으로 확인하실 수 있습니다.</p>
+
+  <div class="videos">
+    <div class="video">
+      <h3>소통리더십 강의</h3>
+      <iframe src="https://www.youtube.com/embed/nubqn5lq2PI" allowfullscreen></iframe>
+    </div>
+    <div class="video">
+      <h3>공감커뮤니케이션 강의</h3>
+      <iframe src="https://www.youtube.com/embed/F9RBrXCk5b8" allowfullscreen></iframe>
+    </div>
+    <div class="video">
+      <h3>명화인문학 강의</h3>
+      <iframe src="https://www.youtube.com/embed/WGRl5vRa_SI" allowfullscreen></iframe>
+    </div>
+    <div class="video">
+      <h3>클래식인문학 강의</h3>
+      <iframe src="https://www.youtube.com/embed/tgJ4TkIiKxg" allowfullscreen></iframe>
+    </div>
+    <div class="video">
+      <h3>조직활성화 강의</h3>
+      <iframe src="https://www.youtube.com/embed/O9Raf5RaSms" allowfullscreen></iframe>
+    </div>
+    <div class="video">
+      <h3>청렴 오락실 강의</h3>
+      <iframe src="https://www.youtube.com/embed/WTtkvm-_C_0" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">연결 채널</h2>
+  <p class="section-desc">블로그, 유튜브, 저서 정보를 통해 이준오 대표의 교육 콘텐츠를 더 깊이 확인할 수 있습니다.</p>
+
+  <div class="links">
+    <a class="link-box" href="https://blog.naver.com/hr_jasonlee" target="_blank">네이버 블로그</a>
+    <a class="link-box" href="https://www.youtube.com/channel/UCr6EQxSkWiNmDn9S8FNzSYA" target="_blank">유튜브 채널</a>
+    <a class="link-box" href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjky&x_csa=%7B%22workType%22%3A%22book%22%2C%22fromUi%22%3A%22kb%22%7D&pkid=1&os=31529684&qvt=0&query=%EC%9D%B4%EC%A4%80%EC%98%A4%20%EB%8F%84%EC%84%9C" target="_blank">저서 보기</a>
+    <a class="link-box" href="mailto:leejunohkorea@gmail.com">이메일 문의</a>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>교육 문의</h2>
+  <p>기업교육, 공공기관 교육, 대학 특강, 조직활성화 워크숍 문의를 남겨주세요.</p>
+  <a class="btn" href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">
+    네이버폼으로 문의하기
+  </a>
+</section>
+
+<footer>
+  © Good Insight · Lee Junoh. All Rights Reserved.
+</footer>
+
 </body>
 </html>
