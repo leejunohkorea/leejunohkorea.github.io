@@ -10,23 +10,27 @@
 body{margin:0;font-family:Arial,'Noto Sans KR',sans-serif;color:#1f2937;background:#f7f8fb;line-height:1.65}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
-header{position:sticky;top:0;z-index:100;background:#fff;padding:16px 7%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 14px rgba(0,0,0,.06)}
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);padding:16px 7%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 14px rgba(0,0,0,.06)}
 header img{height:42px}
-nav{display:flex;gap:14px;flex-wrap:wrap;font-weight:700;font-size:14px}
+nav{display:flex;gap:14px;flex-wrap:wrap;font-weight:800;font-size:14px}
 nav a:hover{color:#0e7490}
 
-.hero{min-height:76vh;background:linear-gradient(rgba(15,23,42,.62),rgba(15,23,42,.72)),url('lecture4.jpg.png') center/cover no-repeat;color:white;display:flex;align-items:center;padding:90px 7%}
-.hero-box{max-width:900px}
-.eyebrow{color:#67e8f9;font-weight:900;letter-spacing:1px;margin-bottom:14px}
-.hero h1{font-size:clamp(40px,7vw,72px);line-height:1.1;margin:0 0 24px}
-.hero p{font-size:clamp(18px,2vw,24px);max-width:780px}
+.hero{min-height:76vh;background:linear-gradient(rgba(7,19,38,.58),rgba(7,19,38,.76)),url('lecture4.jpg.png') center/cover no-repeat;color:white;display:flex;align-items:center;padding:90px 7%}
+.hero-box{max-width:1100px}
+.eyebrow{color:#67e8f9;font-weight:900;letter-spacing:1.8px;margin-bottom:14px}
+.hero h1{font-size:clamp(40px,7vw,72px);line-height:1.08;margin:0 0 24px;letter-spacing:-1px}
+.hero p{font-size:clamp(17px,1.6vw,22px);max-width:980px;line-height:1.55;margin:0}
 .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.btn{display:inline-block;padding:14px 23px;border-radius:999px;background:#ff6b00;color:white;font-weight:900;border:2px solid #ff6b00}
-.btn.secondary{background:transparent;border-color:rgba(255,255,255,.75);color:white}
+.btn{display:inline-block;padding:14px 23px;border-radius:999px;background:#ff6b00;color:white;font-weight:900;border:2px solid #ff6b00;box-shadow:0 10px 22px rgba(0,0,0,.18);transition:.25s}
+.btn:hover{transform:translateY(-3px)}
+.btn.secondary{background:transparent;border-color:rgba(255,255,255,.72);color:white}
+.btn.kakao{background:#0f172a;border-color:#334155;color:white}
+.btn.call{background:#1d4ed8;border-color:#1d4ed8;color:white}
+.btn.sms{background:#475569;border-color:#475569;color:white}
 
 section{padding:72px 7%}
 .white{background:white}
-.section-title{font-size:clamp(30px,4vw,42px);margin:0 0 12px;color:#0f172a}
+.section-title{font-size:clamp(30px,4vw,42px);margin:0 0 12px;color:#0f172a;letter-spacing:-.5px}
 .section-desc{font-size:18px;color:#5b6472;margin:0 0 34px}
 
 .profile-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:start}
@@ -36,10 +40,10 @@ section{padding:72px 7%}
 .info-card ul{padding-left:20px;margin:0}
 .info-card li{margin-bottom:8px}
 
-.insight-banner{padding:70px 7%;background:linear-gradient(rgba(15,23,42,.82),rgba(15,23,42,.82)),url('lecture4.jpg.png') center/cover no-repeat;color:white;text-align:center}
-.insight-banner span{color:#67e8f9;font-weight:900;letter-spacing:1px}
-.insight-banner h2{font-size:clamp(28px,4vw,44px);margin:16px 0}
-.insight-banner p{font-size:19px;max-width:760px;margin:0 auto;color:rgba(255,255,255,.86)}
+.insight-banner{padding:70px 7%;background:linear-gradient(rgba(7,19,38,.82),rgba(7,19,38,.82)),url('lecture4.jpg.png') center/cover no-repeat;color:white;text-align:center}
+.insight-banner span{color:#67e8f9;font-weight:900;letter-spacing:1.8px}
+.insight-banner h2{font-size:clamp(28px,4vw,44px);margin:16px 0;line-height:1.2;letter-spacing:-.5px}
+.insight-banner p{font-size:clamp(16px,1.5vw,20px);max-width:980px;line-height:1.6;margin:0 auto;color:rgba(255,255,255,.88)}
 
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .stat{background:white;text-align:center;padding:28px 20px;border-radius:20px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
@@ -49,72 +53,26 @@ section{padding:72px 7%}
 .program{background:white;border-radius:22px;padding:30px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
 .program h3{font-size:24px;margin:0 0 12px;color:#0f172a}
 .program ul{padding-left:20px;margin:0}
-
-
-.premium-programs{
-  align-items:stretch;
-}
-
-.premium-card{
-  position:relative;
-  overflow:hidden;
-  border:1px solid rgba(14,116,144,.1);
-  background:linear-gradient(135deg,#ffffff,#f8fafc);
-  transition:all .3s ease;
-}
-
-.premium-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 40px rgba(0,0,0,.15);
-}
-
-.premium-card::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:6px;
-  background:linear-gradient(90deg,#0e7490,#67e8f9,#ff6b00);
-}
-
-.program-label{
-  display:inline-block;
-  padding:7px 14px;
-  border-radius:999px;
-  background:#e0f7fa;
-  color:#0e7490;
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:.5px;
-  margin-bottom:15px;
-}
-
-.premium-card h3{
-  font-size:28px;
-  margin-bottom:12px;
-}
-
-.premium-card p{
-  color:#64748b;
-  margin-bottom:18px;
-}
-
-.premium-card.highlight{
-  background:linear-gradient(135deg,#0f172a,#155e75);
-}
-
-.premium-card.highlight h3,
-.premium-card.highlight p,
-.premium-card.highlight li{
-  color:white;
-}
-
-.premium-card.highlight .program-label{
-  background:rgba(255,255,255,.15);
-  color:#67e8f9;
-}
-
+.premium-programs{align-items:stretch}
+.premium-card{position:relative;overflow:hidden;border:1px solid rgba(14,116,144,.1);background:linear-gradient(135deg,#ffffff,#f8fafc);transition:all .3s ease}
+.premium-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,.15)}
+.premium-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:6px;background:linear-gradient(90deg,#0e7490,#67e8f9,#ff6b00)}
+.program-label{display:inline-block;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.15);color:#fff;font-size:12px;font-weight:900;letter-spacing:.5px;margin-bottom:15px;border:1px solid rgba(255,255,255,.16)}
+.premium-card h3{font-size:28px;margin-bottom:12px;color:white}
+.premium-card p{color:rgba(255,255,255,.86);margin-bottom:18px}
+.premium-card li{color:white;margin-bottom:5px}
+.leadership-card{background:linear-gradient(135deg,#0f4c81,#1e6fa8)}
+.communication-card{background:linear-gradient(135deg,#0b6e4f,#1f9d73)}
+.ai-card{background:linear-gradient(135deg,#0f172a,#155e75)}
+.humanities-card{background:linear-gradient(135deg,#3d2414,#6f4e37,#a67c52)}
+.emotion-card{background:linear-gradient(135deg,#5b21b6,#7c3aed)}
+.ethics-card{background:linear-gradient(135deg,#7f1d1d,#b91c1c)}
+.leadership-card .program-label{color:#bdefff}
+.communication-card .program-label{color:#bfffe2}
+.ai-card .program-label{color:#67e8f9}
+.humanities-card .program-label{color:#ffd700;border-color:rgba(255,215,0,.35)}
+.emotion-card .program-label{color:#ddd6fe}
+.ethics-card .program-label{color:#fecaca}
 
 .client-logo-box{background:white;border-radius:24px;padding:24px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
 .client-logo-box img{width:100%;border-radius:14px}
@@ -146,7 +104,8 @@ section{padding:72px 7%}
 .gallery img{width:100%;height:245px;object-fit:cover;border-radius:18px;box-shadow:0 10px 26px rgba(0,0,0,.11)}
 
 .press-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.press-card{background:white;padding:22px;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.06);border-left:5px solid #0e7490}
+.press-card{background:white;padding:22px;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.06);border-left:5px solid #0e7490;transition:.25s}
+.press-card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(0,0,0,.12)}
 .press-date{color:#0e7490;font-weight:900;font-size:14px;margin-bottom:8px}
 .press-card h3{margin:0;font-size:18px;line-height:1.45}
 
@@ -162,41 +121,33 @@ section{padding:72px 7%}
 .link-card h3{font-size:23px;margin:0 0 10px}
 .link-card p{color:#64748b;margin:0}
 
-.contact{background:linear-gradient(135deg,#0f172a,#111827);color:white;text-align:center}
+.contact{background:linear-gradient(135deg,#071326,#0b1f3a,#0f294d);color:white;text-align:center}
 .contact .section-title{color:white}
-.contact p{color:rgba(255,255,255,.82)}
-
+.contact p{color:rgba(255,255,255,.84)}
 .contact-buttons{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px;max-width:980px;margin-left:auto;margin-right:auto}
 .contact-btn{display:flex;justify-content:center;align-items:center;min-height:58px;padding:16px 18px;border-radius:18px;font-size:17px;font-weight:900;color:white;box-shadow:0 12px 28px rgba(0,0,0,.14);transition:.25s}
 .contact-btn:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(0,0,0,.2)}
-.contact-btn.form{background:#03c75a}
-.contact-btn.kakao{background:#FEE500;color:#191919}
-.contact-btn.call{background:#2563eb}
-.contact-btn.sms{background:#7c3aed}
-.btn.kakao{background:#FEE500;border-color:#FEE500;color:#191919}
-.btn.call{background:#2563eb;border-color:#2563eb;color:white}
-.btn.sms{background:#7c3aed;border-color:#7c3aed;color:white}
+.contact-btn.form{background:#ff6b00}
+.contact-btn.kakao{background:#0f172a;color:white;border:1px solid #334155}
+.contact-btn.call{background:#1d4ed8}
+.contact-btn.sms{background:#475569}
 
-.footer-info{background:#0f172a;color:white;padding:46px 7% 24px}
-.footer-inner{display:flex;justify-content:space-between;gap:34px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:26px}
-.footer-inner strong{font-size:25px;color:#67e8f9}
-.footer-inner p{margin:7px 0;color:rgba(255,255,255,.82)}
+.footer-info{background:linear-gradient(135deg,#071326,#0b1f3a,#0f294d);color:white;padding:56px 7% 24px}
+.footer-inner{display:flex;justify-content:space-between;gap:44px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:30px}
+.footer-brand{max-width:560px}
+.footer-inner strong{font-size:27px;color:#67e8f9;letter-spacing:.5px}
+.footer-inner p{margin:8px 0;color:rgba(255,255,255,.84)}
+.footer-detail p{margin:7px 0;color:rgba(255,255,255,.88)}
 .footer-detail a{color:#67e8f9;font-weight:900}
-.footer-contact-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-.footer-mini-btn{display:inline-block;padding:9px 13px;border-radius:999px;background:rgba(255,255,255,.1);color:white;font-weight:800}
-.footer-mini-btn.kakao{background:#FEE500;color:#191919}
-.footer-mini-btn.call{background:#2563eb}
-.footer-mini-btn.sms{background:#7c3aed}
-.copyright{text-align:center;color:rgba(255,255,255,.55);font-size:14px;padding-top:20px}
-
+.copyright{text-align:center;color:rgba(255,255,255,.58);font-size:14px;padding-top:22px}
 
 @media(max-width:1024px){
 .stats,.press-grid{grid-template-columns:repeat(2,1fr)}
 .gallery,.program-grid,.education-grid{grid-template-columns:repeat(2,1fr)}
 .profile-grid{grid-template-columns:1fr}
 .education-card.hospital{grid-column:span 2}
+.contact-buttons{grid-template-columns:repeat(2,1fr)}
 }
-
 @media(max-width:760px){
 header{position:static;align-items:flex-start;flex-direction:column;padding:16px 5%}
 header img{height:38px}
@@ -204,7 +155,7 @@ nav{gap:9px;font-size:13px}
 nav a{background:#f1f5f9;padding:7px 10px;border-radius:999px}
 .hero{padding:64px 5%;min-height:68vh}
 section{padding:52px 5%}
-.stats,.program-grid,.gallery,.press-grid,.videos,.education-grid{grid-template-columns:1fr}
+.stats,.program-grid,.gallery,.press-grid,.videos,.education-grid,.contact-buttons{grid-template-columns:1fr}
 .education-card.hospital{grid-column:auto}
 .gallery img{height:auto}
 .btns{flex-direction:column}
@@ -214,11 +165,8 @@ section{padding:52px 5%}
 .timeline-item{text-align:left}
 .dot{margin-left:0}
 .education-note{text-align:left}
-.contact-buttons{grid-template-columns:1fr}
 .contact-btn{width:100%}
 .footer-inner{flex-direction:column}
-.footer-contact-row{flex-direction:column}
-.footer-mini-btn{text-align:center}
 }
 </style>
 </head>
@@ -228,23 +176,23 @@ section{padding:52px 5%}
 <header>
 <a href="#"><img src="logo.png.png" alt="굿인사이트 로고"></a>
 <nav>
-<a href="#profile">약력</a>
+<a href="#history">회사소개</a>
+<a href="#profile">강사소개</a>
 <a href="#programs">강의분야</a>
 <a href="#clients">고객사</a>
-<a href="#history">회사소개</a>
 <a href="#education-status">교육현황</a>
-<a href="#gallery">현장</a>
+<a href="#gallery">강의현장</a>
 <a href="#press">언론보도</a>
-<a href="#videos">영상</a>
-<a href="#contact">문의</a>
+<a href="#videos">강의영상</a>
+<a href="#contact">교육문의</a>
 </nav>
 </header>
 
 <section class="hero">
 <div class="hero-box">
 <div class="eyebrow">GOOD INSIGHT · HRD CONSULTING</div>
-<h1>조직의 성장,<br>리더의 변화,<br>그리고 교육의 감동</h1>
-<p>AI, 리더십, 조직소통, 감정관리, 예술인문학을 기반으로 기업과 공공기관의 성장을 돕는 HRD 전문 교육을 제공합니다.</p>
+<h1>사람의 변화를 이해하고<br>조직의 성장을 설계합니다</h1>
+<p>AI · 리더십 · 조직소통 · 감정관리 · 청렴윤리 · 예술인문학 기반 HRD 전문 교육</p>
 <div class="btns">
 <a class="btn" href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">📝 교육 문의</a>
 <a class="btn kakao" href="https://open.kakao.com/o/seizym1g" target="_blank">💬 카톡 1:1 문의</a>
@@ -255,6 +203,25 @@ section{padding:52px 5%}
 </div>
 </section>
 
+<section id="history" class="white">
+<h2 class="section-title">굿인사이트 회사소개</h2>
+<p class="section-desc">굿인사이트는 사람과 조직의 ‘진짜 변화’를 이끌어내는 경영컨설팅·HRD·기업교육 전문기관입니다.</p>
+
+<div class="intro-box">
+<p>단순한 지식 전달이나 교육을 넘어, 행동의 변화와 조직의 성장을 촉진하는 실질적 솔루션을 제공합니다.</p>
+<p>인문학적 통찰을 바탕으로 한 사람에 대한 깊은 이해와, AI·데이터 기반의 객관적 분석을 결합해 인간 중심의 혁신과 조직의 지속 가능한 경쟁력 강화를 동시에 실현합니다.</p>
+<p>굿인사이트는 조직이 처한 경영환경, 전략 방향, 산업 특성을 치밀하게 분석해 실행 가능한 <strong>컨설팅</strong>과 <strong>교육 솔루션</strong>을 제공합니다.</p>
+</div>
+
+<h3 class="sub-title">회사 연혁</h3>
+<div class="timeline">
+<div class="timeline-item"><div class="year">2007</div><div class="dot"></div><div class="history-text"><strong>(주)씨에스솔루션</strong><span>개인사업자 → 법인설립 변경</span></div></div>
+<div class="timeline-item"><div class="year">2014</div><div class="dot"></div><div class="history-text"><strong>(주)씨에스솔루션HR교육컨설팅</strong><span>자사명 변경과 교육영역 확장</span></div></div>
+<div class="timeline-item"><div class="year">2024</div><div class="dot"></div><div class="history-text"><strong>(주)굿인사이트</strong><span>자회사 사명 · CI 변경</span></div></div>
+</div>
+<div class="slogan">“굿인사이트는 멈추지 않고 변화하는 기업입니다”</div>
+</section>
+
 <section id="profile" class="white">
 <h2 class="section-title">이준오 대표</h2>
 <p class="section-desc">경영컨설팅, HRD컨설팅, 기업교육을 연결하는 굿인사이트 대표 강사</p>
@@ -263,7 +230,6 @@ section{padding:52px 5%}
 <div class="profile-photo">
 <img src="profile.jpg.jpg" alt="이준오 대표 프로필 사진">
 </div>
-
 <div>
 <div class="info-card">
 <h3>대표 약력</h3>
@@ -279,7 +245,6 @@ section{padding:52px 5%}
 <li>예비역 육군 대위</li>
 </ul>
 </div>
-
 <div class="info-card">
 <h3>학력 및 보유 자격증</h3>
 <ul>
@@ -299,7 +264,7 @@ section{padding:52px 5%}
 <div>
 <span>GOOD INSIGHT METHOD</span>
 <h2>사람의 마음을 이해하고, 조직의 변화를 설계합니다.</h2>
-<p>예술과 인문학, 행동심리, AI 기반 사고 확장을 결합해 교육 이후에도 현장에서 작동하는 변화 경험을 만듭니다.</p>
+<p>예술인문학 · 행동심리 · AI를 결합한 현장 중심 변화 교육</p>
 </div>
 </section>
 
@@ -314,154 +279,68 @@ section{padding:52px 5%}
 
 <section id="programs">
 <h2 class="section-title">대표 교육 분야</h2>
-<p class="section-desc">
-굿인사이트는 AI, 리더십, 조직소통, 감정관리, 청렴윤리, 예술인문학을 결합해 조직의 실제 변화를 만드는 교육을 제공합니다.
-</p>
+<p class="section-desc">굿인사이트는 AI, 리더십, 조직소통, 감정관리, 청렴윤리, 예술인문학을 결합해 조직의 실제 변화를 만드는 교육을 제공합니다.</p>
 
 <div class="program-grid premium-programs">
-
-<div class="program premium-card">
+<div class="program premium-card leadership-card">
 <div class="program-label">리더십</div>
 <h3>리더십 · 셀프리더십</h3>
 <p>성과를 만드는 리더의 관점, 관계, 의사결정 역량을 강화합니다.</p>
-<ul>
-<li>리더십 역량 강화</li>
-<li>셀프리더십 & 동기부여</li>
-<li>팀장 리더십</li>
-<li>갈등관리 및 조직심리 이해</li>
-<li>TKI 기반 갈등관리</li>
-<li>AI 시대 리더십</li>
-</ul>
+<ul><li>리더십 역량 강화</li><li>셀프리더십 & 동기부여</li><li>팀장 리더십</li><li>갈등관리 및 조직심리 이해</li><li>TKI 기반 갈등관리</li><li>AI 시대 리더십</li></ul>
 </div>
 
-<div class="program premium-card">
+<div class="program premium-card communication-card">
 <div class="program-label">조직소통</div>
 <h3>조직소통 · 협업 · 협상</h3>
 <p>조직 내 관계의 질을 높이고 협업 성과를 만드는 소통 역량을 훈련합니다.</p>
-<ul>
-<li>조직 커뮤니케이션</li>
-<li>공감 커뮤니케이션</li>
-<li>세대 간 소통</li>
-<li>협업·팀워크 향상</li>
-<li>협상의 기술</li>
-<li>갈등관리 커뮤니케이션</li>
-</ul>
+<ul><li>조직 커뮤니케이션</li><li>공감 커뮤니케이션</li><li>세대 간 소통</li><li>협업·팀워크 향상</li><li>협상의 기술</li><li>갈등관리 커뮤니케이션</li></ul>
 </div>
 
-<div class="program premium-card highlight">
+<div class="program premium-card ai-card">
 <div class="program-label">AI 교육</div>
 <h3>AI 활용 · AI 시대 조직교육</h3>
 <p>생성형 AI를 업무, 리더십, 윤리, 의사결정에 연결하는 실전형 교육입니다.</p>
-<ul>
-<li>생성형 AI 실전 활용</li>
-<li>AI 리터러시와 프롬프트 활용</li>
-<li>AI 기반 문제해결과 의사결정</li>
-<li>AI 에이전트 이해와 업무 적용</li>
-<li>AI 시대 리더십</li>
-<li>AI 시대 인권교육</li>
-<li>AI 시대 국가안보 및 치안</li>
-</ul>
+<ul><li>생성형 AI 실전 활용</li><li>AI 리터러시와 프롬프트 활용</li><li>AI 기반 문제해결과 의사결정</li><li>AI 에이전트 이해와 업무 적용</li><li>AI 시대 리더십</li><li>AI 시대 인권교육</li><li>AI 시대 국가안보 및 치안</li></ul>
 </div>
 
-<div class="program premium-card">
+<div class="program premium-card humanities-card">
 <div class="program-label">예술인문학</div>
 <h3>클래식 · 명화 인문학</h3>
-<p>클래식 음악과 명화를 통해 사람, 조직, 리더십, 소명을 깊이 있게 성찰합니다.</p>
-<ul>
-<li>클래식 인문학 특강</li>
-<li>명화 인문학 특강</li>
-<li>예술가의 삶과 소명</li>
-<li>인문학 기반 리더십</li>
-<li>부모와 자녀가 함께 듣는 명화 인문학</li>
-<li>예술로 풀어내는 조직문화</li>
-</ul>
+<p>예술을 통해 사람과 조직을 이해하고 리더십과 삶의 의미를 성찰하는 프리미엄 인문학 교육입니다.</p>
+<ul><li>클래식 인문학 특강</li><li>명화 인문학 특강</li><li>예술가의 삶과 소명</li><li>인문학 기반 리더십</li><li>부모와 자녀가 함께 듣는 명화 인문학</li><li>예술심리 기반 조직문화 교육</li></ul>
 </div>
 
-<div class="program premium-card">
+<div class="program premium-card emotion-card">
 <div class="program-label">감정관리</div>
 <h3>감정관리 · 스트레스 회복</h3>
 <p>감정노동, 번아웃, 조직 스트레스를 다루고 회복탄력성을 높입니다.</p>
-<ul>
-<li>감정관리 및 감정해소</li>
-<li>번아웃·보어아웃·브라운아웃 이해</li>
-<li>미술심리 기반 감정코칭</li>
-<li>조직 스트레스 관리</li>
-<li>감정노동 해소 프로그램</li>
-</ul>
+<ul><li>감정관리 및 감정해소</li><li>번아웃·보어아웃·브라운아웃 이해</li><li>미술심리 기반 감정코칭</li><li>조직 스트레스 관리</li><li>감정노동 해소 프로그램</li></ul>
 </div>
 
-<div class="program premium-card">
+<div class="program premium-card ethics-card">
 <div class="program-label">청렴윤리</div>
 <h3>청렴윤리 · 조직문화</h3>
 <p>딱딱한 윤리교육을 참여형 경험과 조직문화 관점으로 전환합니다.</p>
-<ul>
-<li>윤리경영 및 부패방지 교육</li>
-<li>청렴 팀빌딩</li>
-<li>청렴 오락실</li>
-<li>청렴 토크 콘서트</li>
-<li>인문학으로 풀어내는 조직 가치</li>
-</ul>
+<ul><li>윤리경영 및 부패방지 교육</li><li>청렴 팀빌딩</li><li>청렴 오락실</li><li>청렴 토크 콘서트</li><li>인문학으로 풀어내는 조직 가치</li></ul>
 </div>
-
 </div>
 </section>
 
 <section id="clients" class="white">
 <h2 class="section-title">주요 고객사</h2>
 <p class="section-desc">대기업, 공공기관, 지자체, 병원, 교육기관 등 다양한 현장에서 교육을 진행했습니다.</p>
-<div class="client-logo-box">
-<img src="client-logos.png" alt="주요 고객사 로고">
-</div>
-</section>
-
-<section id="history">
-<h2 class="section-title">굿인사이트 회사소개</h2>
-<p class="section-desc">굿인사이트는 사람과 조직의 ‘진짜 변화’를 이끌어내는 경영컨설팅·HRD·기업교육 전문기관입니다.</p>
-
-<div class="intro-box">
-<p>단순한 지식 전달이나 교육을 넘어, 행동의 변화와 조직의 성장을 촉진하는 실질적 솔루션을 제공합니다.</p>
-<p>또한 인문학적 통찰을 바탕으로 한 사람에 대한 깊은 이해와, AI·데이터 기반의 객관적 분석을 결합해 인간 중심의 혁신과 조직의 지속 가능한 경쟁력 강화를 동시에 실현합니다.</p>
-<p>굿인사이트는 조직이 처한 경영환경, 전략 방향, 산업 특성을 치밀하게 분석해 실행 가능한 <strong>컨설팅</strong>과 <strong>교육 솔루션</strong>을 제공합니다.</p>
-</div>
-
-<h3 class="sub-title">회사 연혁</h3>
-<div class="timeline">
-<div class="timeline-item"><div class="year">2007</div><div class="dot"></div><div class="history-text"><strong>(주)씨에스솔루션</strong><span>개인사업자 → 법인설립 변경</span></div></div>
-<div class="timeline-item"><div class="year">2014</div><div class="dot"></div><div class="history-text"><strong>(주)씨에스솔루션HR교육컨설팅</strong><span>자사명 변경과 교육영역 확장</span></div></div>
-<div class="timeline-item"><div class="year">2024</div><div class="dot"></div><div class="history-text"><strong>(주)굿인사이트</strong><span>자회사 사명 · CI 변경</span></div></div>
-</div>
-<div class="slogan">“굿인사이트는 멈추지 않고 변화하는 기업입니다”</div>
+<div class="client-logo-box"><img src="client-logos.png" alt="주요 고객사 로고"></div>
 </section>
 
 <section id="education-status" class="white">
 <h2 class="section-title">굿인사이트 장기교육현황</h2>
 <p class="section-desc">관공서, 공기업, 대기업·중소기업, 병원 및 의료기관 등 다양한 현장에서 지속적인 교육을 진행해왔습니다.</p>
-
 <div class="education-grid">
-<div class="education-card public">
-<h3>관공서 출강 업체</h3>
-<p class="small-title">&lt;수도권&gt;</p>
-<p>한국은행 / 서울특별시 / 경기도청 / 서대문구청 / 종로구청 / 중구청 / 도봉구청 / 용산구청 / 남양주시청 / 수원시청 / 송파구 / 화성시청 / 의정부시청 / 용인시청 / 오산시청 / 은평구 / 인천광역시청 / 인천교육연수원 / 군천구 / 안양시 / 서울중앙교육연수원 / 감사원 / 청와대 / 국정원 / 법무부 / 경찰청 / 선거관리연수원</p>
-<p class="small-title">&lt;지방권&gt;</p>
-<p>국토교통부 / 해양수산인재개발원 / 대전시인재개발원 / 세종특별자치시 / 장주시청 / 단양군청 / 충북도청 / 강원도청 / 철원군청 / 정선군청 / 강릉시청 / 울산시청 / 남해군청 / 광주광역시청 / 전주시청 / 공주시청 / 천안시청 / 강원도인재개발원 / 충남교육연수원 / 익산시 / 경남교육연수원 / 울산교육연수원 / 제주도청 / 대구교육연수원</p>
+<div class="education-card public"><h3>관공서 출강 업체</h3><p class="small-title">&lt;수도권&gt;</p><p>한국은행 / 서울특별시 / 경기도청 / 서대문구청 / 종로구청 / 중구청 / 도봉구청 / 용산구청 / 남양주시청 / 수원시청 / 송파구 / 화성시청 / 의정부시청 / 용인시청 / 오산시청 / 은평구 / 인천광역시청 / 인천교육연수원 / 군천구 / 안양시 / 서울중앙교육연수원 / 감사원 / 청와대 / 국정원 / 법무부 / 경찰청 / 선거관리연수원</p><p class="small-title">&lt;지방권&gt;</p><p>국토교통부 / 해양수산인재개발원 / 대전시인재개발원 / 세종특별자치시 / 장주시청 / 단양군청 / 충북도청 / 강원도청 / 철원군청 / 정선군청 / 강릉시청 / 울산시청 / 남해군청 / 광주광역시청 / 전주시청 / 공주시청 / 천안시청 / 강원도인재개발원 / 충남교육연수원 / 익산시 / 경남교육연수원 / 울산교육연수원 / 제주도청 / 대구교육연수원</p></div>
+<div class="education-card publiccorp"><h3>공기업 출강 업체</h3><p>한국수출입은행 / KBS인재개발원 / 한국철도공사 / 한국수자원공사 / 한국토지주택공사 / 한국도로공사 / 대한상공회의소 / 한국토지공사 / 대한항만청 / 전자부품연구원 / 건강보험심사평가원 / 한국해운조합 / 전주시설관리공단 / 서울시설관리공단 / 대한지적공사 / 국토정보공사 / 한국표준협회 / 한국생산성본부 / 우체국시설관리공단 / 전주시설관리공단 / 경상남도개발공사 / 경북개발공사 / 학교공제조합 / 한국전력공사 / 성북구도시관리공단 / 송파구시설관리공단 / 국립암센터</p></div>
+<div class="education-card company"><h3>대기업 및 중소기업 출강 업체</h3><p>삼성전자 / 엘지에너지솔루션 / 유한킴벌리 / 아모레퍼시픽 / 카마모빌리티 / 두산그룹 / KB국민은행 / IBK기업은행 / 미래에셋생명 / 한화리조트 / 아시아나항공 / 한국투자증권 / 신세계그룹 / 동우화인켐 / 딜라이브 / 현대로템 / 신협협동조합 / 신한카드 / DB생명 / 대한통운 / 오뚜기 / 현대카드 / 삼성화재 / 엘지전자 / 메리츠화재 / 기아자동차 / 코웨이그룹 / 웅진씽크빅 / 롯데컬쳐웍스 / 루이비통코리아 / 현대해상 / GS리테일 / 광동제약 / 메트라이프 / 녹십자 / 부산은행 / 한국머스크</p></div>
+<div class="education-card hospital"><h3>병원 및 의료분야 출강 업체</h3><p>서울대학교병원 / 가톨릭 서울성모병원 / 강남 세브란스 / 국립암센터 / 인천사랑병원 / 명지병원 / 을지대학교의료원 / 한전병원 / 순천향대병원 / 다보스병원 / 강북삼성병원 / 자생한방병원 / 삼육서울병원 / 홍익병원 / 대구파티마병원 / 서울의료원 / 한림대학교 강남성심병원 / 양산부산대병원 / 안성성모병원 / 한국건강관리협회</p></div>
 </div>
-
-<div class="education-card publiccorp">
-<h3>공기업 출강 업체</h3>
-<p>한국수출입은행 / KBS인재개발원 / 한국철도공사 / 한국수자원공사 / 한국토지주택공사 / 한국도로공사 / 대한상공회의소 / 한국토지공사 / 대한항만청 / 전자부품연구원 / 건강보험심사평가원 / 한국해운조합 / 전주시설관리공단 / 서울시설관리공단 / 대한지적공사 / 국토정보공사 / 한국표준협회 / 한국생산성본부 / 우체국시설관리공단 / 전주시설관리공단 / 경상남도개발공사 / 경북개발공사 / 학교공제조합 / 한국전력공사 / 성북구도시관리공단 / 송파구시설관리공단 / 국립암센터</p>
-</div>
-
-<div class="education-card company">
-<h3>대기업 및 중소기업 출강 업체</h3>
-<p>삼성전자 / 엘지에너지솔루션 / 유한킴벌리 / 아모레퍼시픽 / 카마모빌리티 / 두산그룹 / KB국민은행 / IBK기업은행 / 미래에셋생명 / 한화리조트 / 아시아나항공 / 한국투자증권 / 신세계그룹 / 동우화인켐 / 딜라이브 / 현대로템 / 신협협동조합 / 신한카드 / DB생명 / 대한통운 / 오뚜기 / 현대카드 / 삼성화재 / 엘지전자 / 메리츠화재 / 기아자동차 / 코웨이그룹 / 웅진씽크빅 / 롯데컬쳐웍스 / 루이비통코리아 / 현대해상 / GS리테일 / 광동제약 / 메트라이프 / 녹십자 / 부산은행 / 한국머스크</p>
-</div>
-
-<div class="education-card hospital">
-<h3>병원 및 의료분야 출강 업체</h3>
-<p>서울대학교병원 / 가톨릭 서울성모병원 / 강남 세브란스 / 국립암센터 / 인천사랑병원 / 명지병원 / 을지대학교의료원 / 한전병원 / 순천향대병원 / 다보스병원 / 강북삼성병원 / 자생한방병원 / 삼육서울병원 / 홍익병원 / 대구파티마병원 / 서울의료원 / 한림대학교 강남성심병원 / 양산부산대병원 / 안성성모병원 / 한국건강관리협회</p>
-</div>
-</div>
-
 <p class="education-note">※ 위 업체는 3개월 이상 지속적 컨설팅 업체만 기록하였습니다.</p>
 </section>
 
@@ -469,25 +348,13 @@ section{padding:52px 5%}
 <h2 class="section-title">강의 현장</h2>
 <p class="section-desc">기업, 공공기관, 대학, 병원 등 다양한 현장에서 검증된 강의 경험</p>
 <div class="gallery">
-<img src="lecture1.jpg.png" alt="강의 현장 사진 1">
-<img src="lecture2.jpg.png" alt="강의 현장 사진 2">
-<img src="lecture3.jpg.png" alt="강의 현장 사진 3">
-<img src="lecture4.jpg.png" alt="강의 현장 사진 4">
-<img src="lecture5.jpg.png" alt="강의 현장 사진 5">
-<img src="lecture6.jpg.png" alt="강의 현장 사진 6">
-<img src="lecture7.jpg.png" alt="강의 현장 사진 7">
-<img src="lecture8.jpg.png" alt="강의 현장 사진 8">
-<img src="lecture9.jpg.png" alt="강의 현장 사진 9">
-<img src="lecture10.jpg.png" alt="강의 현장 사진 10">
-<img src="lecture11.jpg.png" alt="강의 현장 사진 11">
-<img src="lecture12.jpg.png" alt="강의 현장 사진 12">
+<img src="lecture1.jpg.png" alt="강의 현장 사진 1"><img src="lecture2.jpg.png" alt="강의 현장 사진 2"><img src="lecture3.jpg.png" alt="강의 현장 사진 3"><img src="lecture4.jpg.png" alt="강의 현장 사진 4"><img src="lecture5.jpg.png" alt="강의 현장 사진 5"><img src="lecture6.jpg.png" alt="강의 현장 사진 6"><img src="lecture7.jpg.png" alt="강의 현장 사진 7"><img src="lecture8.jpg.png" alt="강의 현장 사진 8"><img src="lecture9.jpg.png" alt="강의 현장 사진 9"><img src="lecture10.jpg.png" alt="강의 현장 사진 10"><img src="lecture11.jpg.png" alt="강의 현장 사진 11"><img src="lecture12.jpg.png" alt="강의 현장 사진 12">
 </div>
 </section>
 
 <section id="press" class="white">
 <h2 class="section-title">언론보도 및 주요 활동</h2>
 <p class="section-desc">AI, 청렴, 리더십, 공감 커뮤니케이션, 인문학 교육 현장에서 축적된 주요 활동입니다.</p>
-
 <div class="press-grid">
 <a class="press-card" href="https://www.khan.co.kr/article/202512181555002" target="_blank"><div class="press-date">2025.12.18</div><h3>집단지성, AI 시대 조직의 생존전략</h3></a>
 <a class="press-card" href="https://www.sidae.com/article/2025082716460839851" target="_blank"><div class="press-date">2025.08.27</div><h3>AI 원격 얼굴인식 범죄 대응, 인권 침해 아니다</h3></a>
@@ -507,7 +374,6 @@ section{padding:52px 5%}
 <section id="videos">
 <h2 class="section-title">강의 영상</h2>
 <p class="section-desc">주요 강의 콘텐츠와 교육 프로그램 영상을 확인하실 수 있습니다.</p>
-
 <div class="videos">
 <div class="video"><h3>소통리더십 강의</h3><iframe src="https://www.youtube.com/embed/nubqn5lq2PI" allowfullscreen></iframe></div>
 <div class="video"><h3>공감커뮤니케이션 강의</h3><iframe src="https://www.youtube.com/embed/F9RBrXCk5b8" allowfullscreen></iframe></div>
@@ -529,7 +395,6 @@ section{padding:52px 5%}
 <section class="white">
 <h2 class="section-title">연결 채널</h2>
 <p class="section-desc">블로그, 유튜브, 저서, 교육문의 채널을 통해 굿인사이트의 콘텐츠와 전문성을 확인할 수 있습니다.</p>
-
 <div class="link-grid">
 <a href="https://blog.naver.com/hr_jasonlee" target="_blank" class="link-card"><div class="icon">📚</div><h3>네이버 블로그</h3><p>교육 칼럼 및 콘텐츠</p></a>
 <a href="https://www.youtube.com/channel/UCr6EQxSkWiNmDn9S8FNzSYA" target="_blank" class="link-card"><div class="icon">🎥</div><h3>유튜브 채널</h3><p>강의 영상 모음</p></a>
@@ -543,7 +408,6 @@ section{padding:52px 5%}
 <h2 class="section-title">교육 문의</h2>
 <p>기업교육, 공공기관 교육, 대학 특강, 조직활성화 워크숍 문의를 남겨주세요.</p>
 <p>빠른 상담을 원하시면 카카오톡, 전화, 문자 문의를 이용해 주세요.</p>
-
 <div class="contact-buttons">
 <a class="contact-btn form" href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">📝 네이버폼 문의</a>
 <a class="contact-btn kakao" href="https://open.kakao.com/o/seizym1g" target="_blank">💬 카카오톡 1:1 문의</a>
@@ -553,28 +417,23 @@ section{padding:52px 5%}
 </section>
 
 <footer class="footer-info">
-  <div class="footer-inner">
-    <div>
-      <strong>GOOD INSIGHT</strong>
-      <p>조직의 성장, 리더의 변화, 그리고 교육의 감동</p>
-      <p>경영컨설팅 · HRD컨설팅 · 기업교육 전문기관</p>
-      <p>AI · 리더십 · 조직소통 · 감정관리 · 예술인문학</p>
-    </div>
-
-    <div class="footer-detail">
-      <p><b>회사명</b> (주)굿인사이트</p>
-      <p><b>대표</b> 이준오</p>
-      <p><b>사업자등록번호</b> 149-31-01706</p>
-      <p><b>이메일</b> leejunohkorea@gmail.com</p>
-      <p><b>대표전화</b> 02-3775-1450</p>
-      <p><b>주소</b> 서울특별시 송파구 오금로11길 55, 214-316호</p>
-      <p><b>교육문의</b> <a href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">네이버폼 바로가기</a></p>
-      </div>
-    </div>
-
-  <div class="copyright">
-    © Good Insight · Lee Junoh. All Rights Reserved.
-  </div>
+<div class="footer-inner">
+<div class="footer-brand">
+<strong>GOOD INSIGHT</strong>
+<p>사람의 변화를 이해하고 조직의 성장을 설계합니다.</p>
+<p>AI · 리더십 · 조직소통 · 감정관리 · 청렴윤리 · 예술인문학 전문 교육기관</p>
+</div>
+<div class="footer-detail">
+<p><b>회사명</b> (주)굿인사이트</p>
+<p><b>대표</b> 이준오</p>
+<p><b>사업자등록번호</b> 149-31-01706</p>
+<p><b>대표전화</b> 02-3775-1450</p>
+<p><b>이메일</b> leejunohkorea@gmail.com</p>
+<p><b>주소</b> 서울특별시 송파구 오금로11길 55, 214-316호</p>
+<p><b>교육문의</b> <a href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">네이버폼 바로가기</a></p>
+</div>
+</div>
+<div class="copyright">© Good Insight · Lee Junoh. All Rights Reserved.</div>
 </footer>
 
 </body>
