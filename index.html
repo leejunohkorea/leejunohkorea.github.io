@@ -50,6 +50,72 @@ section{padding:72px 7%}
 .program h3{font-size:24px;margin:0 0 12px;color:#0f172a}
 .program ul{padding-left:20px;margin:0}
 
+
+.premium-programs{
+  align-items:stretch;
+}
+
+.premium-card{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(14,116,144,.1);
+  background:linear-gradient(135deg,#ffffff,#f8fafc);
+  transition:all .3s ease;
+}
+
+.premium-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+.premium-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:6px;
+  background:linear-gradient(90deg,#0e7490,#67e8f9,#ff6b00);
+}
+
+.program-label{
+  display:inline-block;
+  padding:7px 14px;
+  border-radius:999px;
+  background:#e0f7fa;
+  color:#0e7490;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.5px;
+  margin-bottom:15px;
+}
+
+.premium-card h3{
+  font-size:28px;
+  margin-bottom:12px;
+}
+
+.premium-card p{
+  color:#64748b;
+  margin-bottom:18px;
+}
+
+.premium-card.highlight{
+  background:linear-gradient(135deg,#0f172a,#155e75);
+}
+
+.premium-card.highlight h3,
+.premium-card.highlight p,
+.premium-card.highlight li{
+  color:white;
+}
+
+.premium-card.highlight .program-label{
+  background:rgba(255,255,255,.15);
+  color:#67e8f9;
+}
+
+
 .client-logo-box{background:white;border-radius:24px;padding:24px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
 .client-logo-box img{width:100%;border-radius:14px}
 
@@ -247,15 +313,96 @@ section{padding:52px 5%}
 </section>
 
 <section id="programs">
-<h2 class="section-title">강의 분야</h2>
-<p class="section-desc">사람, 조직, AI, 감정, 윤리를 통합적으로 다루는 교육 포트폴리오</p>
+<h2 class="section-title">대표 교육 분야</h2>
+<p class="section-desc">
+굿인사이트는 AI, 리더십, 조직소통, 감정관리, 청렴윤리, 예술인문학을 결합해 조직의 실제 변화를 만드는 교육을 제공합니다.
+</p>
 
-<div class="program-grid">
-<div class="program"><h3>1. People & Leadership</h3><ul><li>리더십 역량 강화</li><li>셀프리더십 & 동기부여</li><li>갈등관리 & 조직 심리 이해(TKI 포함)</li><li>인문학 기반 리더십</li></ul></div>
-<div class="program"><h3>2. Communication & Collaboration</h3><ul><li>조직 커뮤니케이션 & 소통 기술</li><li>협상의 기술</li><li>협업·팀워크 향상</li><li>공감 기반 조직문화 개선</li></ul></div>
-<div class="program"><h3>3. AI & Future Insight</h3><ul><li>AI 리터러시 & 실전 활용</li><li>AI 기반 문제해결 & 의사결정</li><li>AI 크리에이터 과정</li><li>다양한 생성형 AI</li><li>AI 시대 국가안보 및 치안</li></ul></div>
-<div class="program"><h3>4. Emotional Intelligence & Well-being</h3><ul><li>감정관리 & 감정해소</li><li>미술심리·인문학 기반 감정코칭</li><li>조직 스트레스 관리</li><li>감정노동 해소 프로그램</li></ul></div>
-<div class="program"><h3>5. Ethics & Organizational Culture</h3><ul><li>윤리경영 & 부패방지 교육</li><li>청렴 팀빌딩</li><li>청렴 토크 콘서트</li><li>인문학으로 풀어내는 조직 가치</li></ul></div>
+<div class="program-grid premium-programs">
+
+<div class="program premium-card">
+<div class="program-label">리더십</div>
+<h3>리더십 · 셀프리더십</h3>
+<p>성과를 만드는 리더의 관점, 관계, 의사결정 역량을 강화합니다.</p>
+<ul>
+<li>리더십 역량 강화</li>
+<li>셀프리더십 & 동기부여</li>
+<li>팀장 리더십</li>
+<li>갈등관리 및 조직심리 이해</li>
+<li>TKI 기반 갈등관리</li>
+<li>AI 시대 리더십</li>
+</ul>
+</div>
+
+<div class="program premium-card">
+<div class="program-label">조직소통</div>
+<h3>조직소통 · 협업 · 협상</h3>
+<p>조직 내 관계의 질을 높이고 협업 성과를 만드는 소통 역량을 훈련합니다.</p>
+<ul>
+<li>조직 커뮤니케이션</li>
+<li>공감 커뮤니케이션</li>
+<li>세대 간 소통</li>
+<li>협업·팀워크 향상</li>
+<li>협상의 기술</li>
+<li>갈등관리 커뮤니케이션</li>
+</ul>
+</div>
+
+<div class="program premium-card highlight">
+<div class="program-label">AI 교육</div>
+<h3>AI 활용 · AI 시대 조직교육</h3>
+<p>생성형 AI를 업무, 리더십, 윤리, 의사결정에 연결하는 실전형 교육입니다.</p>
+<ul>
+<li>생성형 AI 실전 활용</li>
+<li>AI 리터러시와 프롬프트 활용</li>
+<li>AI 기반 문제해결과 의사결정</li>
+<li>AI 에이전트 이해와 업무 적용</li>
+<li>AI 시대 리더십</li>
+<li>AI 시대 인권교육</li>
+<li>AI 시대 국가안보 및 치안</li>
+</ul>
+</div>
+
+<div class="program premium-card">
+<div class="program-label">예술인문학</div>
+<h3>클래식 · 명화 인문학</h3>
+<p>클래식 음악과 명화를 통해 사람, 조직, 리더십, 소명을 깊이 있게 성찰합니다.</p>
+<ul>
+<li>클래식 인문학 특강</li>
+<li>명화 인문학 특강</li>
+<li>예술가의 삶과 소명</li>
+<li>인문학 기반 리더십</li>
+<li>부모와 자녀가 함께 듣는 명화 인문학</li>
+<li>예술로 풀어내는 조직문화</li>
+</ul>
+</div>
+
+<div class="program premium-card">
+<div class="program-label">감정관리</div>
+<h3>감정관리 · 스트레스 회복</h3>
+<p>감정노동, 번아웃, 조직 스트레스를 다루고 회복탄력성을 높입니다.</p>
+<ul>
+<li>감정관리 및 감정해소</li>
+<li>번아웃·보어아웃·브라운아웃 이해</li>
+<li>미술심리 기반 감정코칭</li>
+<li>조직 스트레스 관리</li>
+<li>감정노동 해소 프로그램</li>
+</ul>
+</div>
+
+<div class="program premium-card">
+<div class="program-label">청렴윤리</div>
+<h3>청렴윤리 · 조직문화</h3>
+<p>딱딱한 윤리교육을 참여형 경험과 조직문화 관점으로 전환합니다.</p>
+<ul>
+<li>윤리경영 및 부패방지 교육</li>
+<li>청렴 팀빌딩</li>
+<li>청렴 오락실</li>
+<li>청렴 토크 콘서트</li>
+<li>인문학으로 풀어내는 조직 가치</li>
+</ul>
+</div>
+
 </div>
 </section>
 
@@ -417,13 +564,13 @@ section{padding:52px 5%}
     <div class="footer-detail">
       <p><b>회사명</b> (주)굿인사이트</p>
       <p><b>대표</b> 이준오</p>
+      <p><b>사업자등록번호</b> 149-31-01706</p>
       <p><b>이메일</b> leejunohkorea@gmail.com</p>
       <p><b>대표전화</b> 02-3775-1450</p>
       <p><b>주소</b> 서울특별시 송파구 오금로11길 55, 214-316호</p>
       <p><b>교육문의</b> <a href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">네이버폼 바로가기</a></p>
       </div>
     </div>
-  </div>
 
   <div class="copyright">
     © Good Insight · Lee Junoh. All Rights Reserved.
