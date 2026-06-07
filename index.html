@@ -42,6 +42,14 @@ section{padding:72px 7%}
 .info-card ul{padding-left:20px;margin:0}
 .info-card li{margin-bottom:8px}
 
+.book-card{background:linear-gradient(135deg,#ffffff,#f8fafc);border-radius:22px;padding:26px;box-shadow:0 10px 28px rgba(0,0,0,.07);display:grid;grid-template-columns:160px 1fr;gap:24px;align-items:center;border:1px solid rgba(14,116,144,.1)}
+.book-cover{border-radius:12px;box-shadow:0 16px 30px rgba(15,23,42,.18);overflow:hidden;background:#fff}
+.book-cover img{width:100%;height:auto}
+.book-info h3{font-size:25px;margin:0 0 8px;color:#0e7490}
+.book-info h4{font-size:22px;margin:0 0 10px;color:#0f172a;line-height:1.35}
+.book-info p{margin:0 0 14px;color:#475569}
+.book-info .book-link{display:inline-block;padding:10px 16px;border-radius:999px;background:#12385b;color:white;font-weight:900;font-size:14px}
+
 .insight-banner{padding:70px 7%;background:linear-gradient(rgba(7,19,38,.82),rgba(7,19,38,.86)),url('lecture4.jpg.png') center/cover no-repeat;color:white;text-align:center}
 .insight-banner span{color:#67e8f9;font-weight:900;letter-spacing:1px}
 .insight-banner h2{font-size:clamp(28px,4vw,44px);margin:16px 0;line-height:1.25}
@@ -160,6 +168,7 @@ section{padding:52px 5%}
 .timeline-item{text-align:left}
 .dot{margin-left:0}
 .education-note{text-align:left}
+.book-card{grid-template-columns:1fr}.book-cover{max-width:220px}
 .contact-buttons{grid-template-columns:1fr}
 .contact-btn{width:100%}
 .footer-inner{flex-direction:column}
@@ -246,6 +255,18 @@ section{padding:52px 5%}
 <li>심리치료사 자격(미국상담심리치료학회)</li>
 <li>심리·치유·상담 관련 자격 및 수료증 14개 보유</li>
 </ul>
+</div>
+
+<div class="book-card">
+<div class="book-cover">
+<img src="book-cover.jpg" alt="저서 함께 생각하는 인간 표지">
+</div>
+<div class="book-info">
+<h3>저서</h3>
+<h4>『함께 생각하는 인간』</h4>
+<p>AI를 넘어서는 집단지성의 힘. 조직이 더 똑똑해지는 협업의 기술을 다룬 저서입니다.</p>
+<a class="book-link" href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjky&x_csa=%7B%22workType%22%3A%22book%22%2C%22fromUi%22%3A%22kb%22%7D&pkid=1&os=31529684&qvt=0&query=%EC%9D%B4%EC%A4%80%EC%98%A4%20%EB%8F%84%EC%84%9C" target="_blank">저서 정보 보기</a>
+</div>
 </div>
 </div>
 </div>
