@@ -1,560 +1,310 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>이준오 대표 | 굿인사이트</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, 'Noto Sans KR', sans-serif;
-      color: #1f2937;
-      background: #f6f7fb;
-      line-height: 1.65;
-    }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이준오 대표 | 굿인사이트</title>
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-      padding: 16px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,'Noto Sans KR',sans-serif;color:#1f2937;background:#f7f8fb;line-height:1.65}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+header{position:sticky;top:0;z-index:100;background:#fff;padding:16px 7%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 14px rgba(0,0,0,.06)}
+header img{height:42px}
+nav{display:flex;gap:16px;flex-wrap:wrap;font-weight:700;font-size:14px}
+nav a:hover{color:#0e7490}
 
-    header img { height: 44px; }
+.hero{min-height:72vh;background:linear-gradient(rgba(15,23,42,.62),rgba(15,23,42,.72)),url('lecture3.jpg.png') center/cover no-repeat;color:white;display:flex;align-items:center;padding:90px 7%}
+.hero-box{max-width:860px}
+.eyebrow{color:#67e8f9;font-weight:900;letter-spacing:1px;margin-bottom:14px}
+.hero h1{font-size:clamp(40px,7vw,72px);line-height:1.1;margin:0 0 24px}
+.hero p{font-size:clamp(18px,2vw,24px);max-width:760px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:14px 23px;border-radius:999px;background:#ff6b00;color:white;font-weight:900;border:2px solid #ff6b00}
+.btn.secondary{background:transparent;border-color:rgba(255,255,255,.75);color:white}
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      font-weight: 700;
-      font-size: 15px;
-    }
+section{padding:72px 7%}
+.white{background:white}
+.section-title{font-size:clamp(30px,4vw,42px);margin:0 0 12px;color:#0f172a}
+.section-desc{font-size:18px;color:#5b6472;margin:0 0 34px}
 
-    nav a { color: #111827; }
-    nav a:hover { color: #0e7490; }
+.profile-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:start}
+.profile-photo{border-radius:24px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.15)}
+.info-card{background:#fff;border-radius:22px;padding:30px;box-shadow:0 10px 28px rgba(0,0,0,.07);margin-bottom:22px}
+.info-card h3{font-size:26px;margin:0 0 16px;color:#0e7490}
+.info-card ul{padding-left:20px;margin:0}
+.info-card li{margin-bottom:8px}
 
-    .hero {
-      padding: 90px 7%;
-      background: linear-gradient(135deg, #0f172a, #155e75);
-      color: white;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 54px;
-      align-items: center;
-    }
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stat{background:white;text-align:center;padding:28px 20px;border-radius:20px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
+.stat strong{display:block;font-size:34px;color:#0e7490}
 
-    .eyebrow {
-      color: #67e8f9;
-      font-weight: 800;
-      letter-spacing: 1px;
-      margin-bottom: 14px;
-    }
+.program-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.program{background:white;border-radius:22px;padding:30px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
+.program h3{font-size:24px;margin:0 0 12px;color:#0f172a}
+.program ul{padding-left:20px;margin:0}
 
-    .hero h1 {
-      font-size: clamp(38px, 6vw, 64px);
-      line-height: 1.12;
-      margin: 0 0 24px;
-    }
+.image-section{display:grid;gap:26px}
+.image-box{background:white;border-radius:22px;padding:22px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
+.image-box img{width:100%;border-radius:14px}
 
-    .hero p {
-      font-size: clamp(17px, 2vw, 22px);
-      opacity: 0.94;
-      margin-bottom: 28px;
-    }
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gallery img{width:100%;height:245px;object-fit:cover;border-radius:18px;box-shadow:0 10px 26px rgba(0,0,0,.11)}
 
-    .hero-photo {
-      border-radius: 28px;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-      overflow: hidden;
-      background: white;
-    }
+.press-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.press-card{background:white;padding:22px;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.06);border-left:5px solid #0e7490}
+.press-date{color:#0e7490;font-weight:900;font-size:14px;margin-bottom:8px}
+.press-card h3{margin:0;font-size:18px;line-height:1.45}
 
-    .btns {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+.videos{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.video{background:white;padding:20px;border-radius:20px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
+.video iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:14px}
 
-    .btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 999px;
-      font-weight: 800;
-      background: #ff6b00;
-      color: white;
-      border: 2px solid #ff6b00;
-    }
+.channels{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.channel{background:white;padding:28px 20px;border-radius:20px;text-align:center;font-weight:900;box-shadow:0 10px 28px rgba(0,0,0,.07)}
 
-    .btn.secondary {
-      background: transparent;
-      color: white;
-      border-color: rgba(255,255,255,0.65);
-    }
+.contact{background:linear-gradient(135deg,#0f172a,#111827);color:white;text-align:center}
+.contact .section-title{color:white}
+.contact p{color:rgba(255,255,255,.82)}
+footer{background:white;text-align:center;padding:30px;color:#6b7280;font-size:14px}
 
-    section {
-      padding: 72px 7%;
-    }
-
-    .white { background: white; }
-
-    .section-title {
-      font-size: clamp(28px, 4vw, 40px);
-      margin: 0 0 12px;
-      color: #0f172a;
-    }
-
-    .section-desc {
-      color: #5b6472;
-      margin: 0 0 34px;
-      font-size: 18px;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .stat {
-      background: white;
-      padding: 28px 20px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.07);
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 34px;
-      color: #0e7490;
-      margin-bottom: 6px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 28px;
-      border-radius: 20px;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.07);
-      border: 1px solid #eef2f7;
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      color: #0f172a;
-      font-size: 22px;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 245px;
-      object-fit: cover;
-      border-radius: 18px;
-      box-shadow: 0 10px 26px rgba(0,0,0,0.11);
-    }
-
-    .videos {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-    }
-
-    .video {
-      background: white;
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.07);
-    }
-
-    .video h3 {
-      margin: 0 0 14px;
-      color: #0f172a;
-    }
-
-    .video iframe {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: 0;
-      border-radius: 14px;
-    }
-
-    .press-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .press-card {
-      background: white;
-      padding: 22px;
-      border-radius: 18px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      border-left: 5px solid #0e7490;
-      transition: 0.2s;
-    }
-
-    .press-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 32px rgba(0,0,0,0.1);
-    }
-
-    .press-date {
-      color: #0e7490;
-      font-weight: 800;
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-
-    .press-card h3 {
-      margin: 0;
-      font-size: 18px;
-      color: #111827;
-      line-height: 1.45;
-    }
-
-    .channels {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .channel {
-      background: white;
-      padding: 28px 20px;
-      border-radius: 20px;
-      text-align: center;
-      font-weight: 900;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.07);
-      color: #111827;
-    }
-
-    .channel:hover {
-      color: #0e7490;
-    }
-
-    .contact {
-      background: linear-gradient(135deg, #0f172a, #111827);
-      color: white;
-      text-align: center;
-    }
-
-    .contact .section-title {
-      color: white;
-    }
-
-    .contact p {
-      color: rgba(255,255,255,0.82);
-      font-size: 18px;
-    }
-
-    footer {
-      background: white;
-      text-align: center;
-      padding: 30px;
-      color: #6b7280;
-      font-size: 14px;
-    }
-
-    @media (max-width: 1024px) {
-      .stats, .cards, .press-grid, .channels {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 760px) {
-      header {
-        position: static;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 16px 5%;
-      }
-
-      header img { height: 38px; }
-
-      nav {
-        gap: 10px;
-        font-size: 14px;
-      }
-
-      nav a {
-        background: #f1f5f9;
-        padding: 7px 10px;
-        border-radius: 999px;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 56px 5%;
-        text-align: left;
-      }
-
-      .hero-photo {
-        max-width: 340px;
-        margin: 0 auto;
-      }
-
-      section {
-        padding: 52px 5%;
-      }
-
-      .stats, .cards, .gallery, .videos, .press-grid, .channels {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery img {
-        height: auto;
-      }
-
-      .btns {
-        flex-direction: column;
-      }
-
-      .btn {
-        text-align: center;
-        width: 100%;
-      }
-    }
-  </style>
+@media(max-width:1024px){
+.stats,.press-grid,.channels{grid-template-columns:repeat(2,1fr)}
+.gallery,.program-grid{grid-template-columns:repeat(2,1fr)}
+.profile-grid{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+header{position:static;align-items:flex-start;flex-direction:column;padding:16px 5%}
+header img{height:38px}
+nav{gap:9px;font-size:13px}
+nav a{background:#f1f5f9;padding:7px 10px;border-radius:999px}
+.hero{padding:64px 5%;min-height:68vh}
+section{padding:52px 5%}
+.stats,.program-grid,.gallery,.press-grid,.videos,.channels{grid-template-columns:1fr}
+.gallery img{height:auto}
+.btns{flex-direction:column}
+.btn{text-align:center;width:100%}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <a href="#"><img src="logo.png.png" alt="굿인사이트 로고"></a>
-  <nav>
-    <a href="#about">소개</a>
-    <a href="#programs">교육분야</a>
-    <a href="#gallery">강의현장</a>
-    <a href="#press">언론보도</a>
-    <a href="#videos">영상</a>
-    <a href="#contact">문의</a>
-  </nav>
+<a href="#"><img src="logo.png.png" alt="굿인사이트 로고"></a>
+<nav>
+<a href="#profile">약력</a>
+<a href="#programs">강의분야</a>
+<a href="#clients">고객사</a>
+<a href="#gallery">현장</a>
+<a href="#press">언론보도</a>
+<a href="#videos">영상</a>
+<a href="#contact">문의</a>
+</nav>
 </header>
 
 <section class="hero">
-  <div>
-    <div class="eyebrow">GOOD INSIGHT · HRD CONSULTING</div>
-    <h1>조직의 성장,<br>리더의 변화,<br>그리고 교육의 감동</h1>
-    <p>
-      이준오 대표는 AI, 리더십, 조직소통, 감정관리, 예술인문학을 기반으로
-      기업과 공공기관의 성장을 돕는 HRD 전문 강사입니다.
-    </p>
-    <div class="btns">
-      <a class="btn" href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">교육 문의하기</a>
-      <a class="btn secondary" href="https://blog.naver.com/hr_jasonlee" target="_blank">블로그 보기</a>
-    </div>
-  </div>
-
-  <div class="hero-photo">
-    <img src="profile.jpg.jpg" alt="이준오 대표 프로필 사진">
-  </div>
+<div class="hero-box">
+<div class="eyebrow">GOOD INSIGHT · HRD CONSULTING</div>
+<h1>조직의 성장,<br>리더의 변화,<br>그리고 교육의 감동</h1>
+<p>AI, 리더십, 조직소통, 감정관리, 예술인문학을 기반으로 기업과 공공기관의 성장을 돕는 HRD 전문 교육을 제공합니다.</p>
+<div class="btns">
+<a class="btn" href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">교육 문의하기</a>
+<a class="btn secondary" href="https://blog.naver.com/hr_jasonlee" target="_blank">블로그 보기</a>
+</div>
+</div>
 </section>
 
-<section id="about" class="white">
-  <h2 class="section-title">Good Insight</h2>
-  <p class="section-desc">
-    문화, 예술, AI를 접목한 HR교육 전문 브랜드. 사람의 행동심리와 조직의 변화를 연결하는 교육을 설계합니다.
-  </p>
+<section id="profile" class="white">
+<h2 class="section-title">이준오 대표</h2>
+<p class="section-desc">경영컨설팅, HRD컨설팅, 기업교육을 연결하는 굿인사이트 대표 강사</p>
 
-  <div class="stats">
-    <div class="stat"><strong>300+</strong>함께한 고객사</div>
-    <div class="stat"><strong>2,000+</strong>누적 강의</div>
-    <div class="stat"><strong>100,000+</strong>누적 교육생</div>
-    <div class="stat"><strong>4.8/5</strong>강의 만족도</div>
-  </div>
+<div class="profile-grid">
+<div class="profile-photo">
+<img src="profile.jpg.jpg" alt="이준오 대표 프로필 사진">
+</div>
+
+<div>
+<div class="info-card">
+<h3>대표 약력</h3>
+<ul>
+<li>(주)굿인사이트 대표</li>
+<li>한국IT서비스산업협회 AI(국방과학기술) 교육 강사</li>
+<li>한국능률협회컨설팅 HR부문 전문위원</li>
+<li>한국표준협회 HR부문 전문위원</li>
+<li>한국품질재단 HR부문 전문위원</li>
+<li>국민건강보험공단 인재개발원 인문학 강사</li>
+<li>해커스HRD 사업부 교수</li>
+<li>전경북대학교 외래교수</li>
+<li>예비역 육군 대위</li>
+</ul>
+</div>
+
+<div class="info-card">
+<h3>학력 및 보유 자격증</h3>
+<ul>
+<li>아주대학교 일반대학원 경영학 박사수료(인사조직 전공)</li>
+<li>아주대학교 경영대학원 경영학 석사졸업(인사/협상 전공)</li>
+<li>Harbin University AMP(Advanced Management Program) Completed</li>
+<li>한국조정중재협회 협상전문가 1급</li>
+<li>심리치료사 자격(미국상담심리치료학회)</li>
+<li>심리·치유·상담 관련 자격 및 수료증 14개 보유</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="white">
+<div class="stats">
+<div class="stat"><strong>300+</strong>함께한 고객사</div>
+<div class="stat"><strong>2,000+</strong>누적 강의</div>
+<div class="stat"><strong>100,000+</strong>누적 교육생</div>
+<div class="stat"><strong>4.8/5</strong>강의 만족도</div>
+</div>
 </section>
 
 <section id="programs">
-  <h2 class="section-title">대표 교육 분야</h2>
-  <p class="section-desc">조직의 문제를 교육 언어로 해석하고, 현장에서 실행 가능한 변화로 연결합니다.</p>
+<h2 class="section-title">강의 분야</h2>
+<p class="section-desc">사람, 조직, AI, 감정, 윤리를 통합적으로 다루는 교육 포트폴리오</p>
 
-  <div class="cards">
-    <div class="card">
-      <h3>생성형 AI 활용</h3>
-      <p>업무 생산성, AI 협업, 프롬프트 활용, 조직 내 AI 리터러시 교육</p>
-    </div>
-    <div class="card">
-      <h3>리더십</h3>
-      <p>성과관리, 동기부여, 관계관리, 팀장 리더십, 셀프리더십</p>
-    </div>
-    <div class="card">
-      <h3>조직 커뮤니케이션</h3>
-      <p>공감소통, 갈등관리, 피드백, 세대 간 커뮤니케이션</p>
-    </div>
-    <div class="card">
-      <h3>감정관리</h3>
-      <p>감정노동, 스트레스 관리, 번아웃 예방, 회복탄력성</p>
-    </div>
-    <div class="card">
-      <h3>예술 인문학</h3>
-      <p>클래식, 명화, 예술가의 삶을 통한 조직과 사람 이해</p>
-    </div>
-    <div class="card">
-      <h3>조직활성화·청렴</h3>
-      <p>팀빌딩, 조직문화, 청렴윤리, 참여형 워크숍</p>
-    </div>
-  </div>
+<div class="program-grid">
+<div class="program">
+<h3>1. People & Leadership</h3>
+<ul>
+<li>리더십 역량 강화</li>
+<li>셀프리더십 & 동기부여</li>
+<li>갈등관리 & 조직 심리 이해(TKI 포함)</li>
+<li>인문학 기반 리더십</li>
+</ul>
+</div>
+
+<div class="program">
+<h3>2. Communication & Collaboration</h3>
+<ul>
+<li>조직 커뮤니케이션 & 소통 기술</li>
+<li>협상의 기술</li>
+<li>협업·팀워크 향상</li>
+<li>공감 기반 조직문화 개선</li>
+</ul>
+</div>
+
+<div class="program">
+<h3>3. AI & Future Insight</h3>
+<ul>
+<li>AI 리터러시 & 실전 활용</li>
+<li>AI 기반 문제해결 & 의사결정</li>
+<li>AI 크리에이터 과정</li>
+<li>다양한 생성형 AI</li>
+<li>AI 시대 국가안보 및 치안</li>
+</ul>
+</div>
+
+<div class="program">
+<h3>4. Emotional Intelligence & Well-being</h3>
+<ul>
+<li>감정관리 & 감정해소</li>
+<li>미술심리·인문학 기반 감정코칭</li>
+<li>조직 스트레스 관리</li>
+<li>감정노동 해소 프로그램</li>
+</ul>
+</div>
+
+<div class="program">
+<h3>5. Ethics & Organizational Culture</h3>
+<ul>
+<li>윤리경영 & 부패방지 교육</li>
+<li>청렴 팀빌딩</li>
+<li>청렴 토크 콘서트</li>
+<li>인문학으로 풀어내는 조직 가치</li>
+</ul>
+</div>
+</div>
 </section>
 
-<section id="gallery" class="white">
-  <h2 class="section-title">강의 현장</h2>
-  <p class="section-desc">기업, 공공기관, 대학, 병원 등 다양한 현장에서 검증된 강의 경험</p>
+<section id="clients" class="white">
+<h2 class="section-title">고객사 및 교육 현황</h2>
+<p class="section-desc">대기업, 공공기관, 지자체, 병원, 교육기관 등 다양한 현장에서 교육을 진행했습니다.</p>
 
-  <div class="gallery">
-    <img src="lecture1.jpg.png" alt="강의 현장 사진 1">
-    <img src="lecture2.jpg.png" alt="강의 현장 사진 2">
-    <img src="lecture3.jpg.png" alt="강의 현장 사진 3">
-    <img src="lecture4.jpg.png" alt="강의 현장 사진 4">
-    <img src="lecture5.jpg.png" alt="강의 현장 사진 5">
-  </div>
+<div class="image-section">
+<div class="image-box">
+<img src="client-logos.png" alt="주요 고객사 로고">
+</div>
+<div class="image-box">
+<img src="company-history.png" alt="굿인사이트 회사 소개 및 연혁">
+</div>
+<div class="image-box">
+<img src="education-status.png" alt="굿인사이트 교육 현황">
+</div>
+</div>
 </section>
 
-<section id="press">
-  <h2 class="section-title">언론보도 및 주요 활동</h2>
-  <p class="section-desc">AI, 청렴, 리더십, 공감 커뮤니케이션, 인문학 교육 현장에서 축적된 주요 활동입니다.</p>
-
-  <div class="press-grid">
-    <a class="press-card" href="https://www.khan.co.kr/article/202512181555002" target="_blank">
-      <div class="press-date">2025.12.18</div>
-      <h3>집단지성, AI 시대 조직의 생존전략</h3>
-    </a>
-
-    <a class="press-card" href="https://www.sidae.com/article/2025082716460839851" target="_blank">
-      <div class="press-date">2025.08.27</div>
-      <h3>AI 원격 얼굴인식 범죄 대응, 인권 침해 아니다</h3>
-    </a>
-
-    <a class="press-card" href="http://www.gbjanews.kr/default/index_view_page.php?idx=185945" target="_blank">
-      <div class="press-date">2025.08.19</div>
-      <h3>즐기면서 배우는 청렴, 경주시 ‘청렴오락실’ 성황</h3>
-    </a>
-
-    <a class="press-card" href="https://www.nspna.com/country/?mode=view&newsid=769362" target="_blank">
-      <div class="press-date">2025.07.31</div>
-      <h3>경북교육청, 특수교육지원 인력 역량 강화 연수 개최</h3>
-    </a>
-
-    <a class="press-card" href="https://daily.hankooki.com/news/articleView.html?idxno=1247464" target="_blank">
-      <div class="press-date">2025.07.23</div>
-      <h3>아산교육지원청, 2025년 하반기 행정실장 회의 개최</h3>
-    </a>
-
-    <a class="press-card" href="https://www.nongchuktoday.com/news/articleView.html?idxno=3926" target="_blank">
-      <div class="press-date">2025.06.19</div>
-      <h3>국립농업박물관, ‘시나브로 농촌에 스며들다’ 교육 운영</h3>
-    </a>
-
-    <a class="press-card" href="https://view.asiae.co.kr/article/2024060612255709625" target="_blank">
-      <div class="press-date">2025.08.03</div>
-      <h3>‘소통과 공감’, 이강덕 포항시장과 함께하는 청렴 토크콘서트</h3>
-    </a>
-
-    <a class="press-card" href="https://www.breaknews.com/1071874" target="_blank">
-      <div class="press-date">2024.11.19</div>
-      <h3>평택시, 2024년 4분기 통합방위협의회 회의 개최</h3>
-    </a>
-
-    <a class="press-card" href="http://www.toyonet.co.kr/bbs/board.php?bo_table=news&wr_id=28425" target="_blank">
-      <div class="press-date">2024.10.14</div>
-      <h3>송파구시설관리공단, 차세대 여성 리더 양성 특별교육</h3>
-    </a>
-
-    <a class="press-card" href="https://www.viva100.com/20240501010000130" target="_blank">
-      <div class="press-date">2024.05.01</div>
-      <h3>사천시, 직원 친절마인드 향상 교육 실시</h3>
-    </a>
-
-    <a class="press-card" href="https://www.viva100.com/20191115010005148" target="_blank">
-      <div class="press-date">2019.11.15</div>
-      <h3>나주시, 시민감사관 및 공직자 청렴워크숍 개최</h3>
-    </a>
-
-    <a class="press-card" href="https://www.newsworker.co.kr/news/articleView.html?idxno=38279" target="_blank">
-      <div class="press-date">2019.08.28</div>
-      <h3>영광군, 청렴콘서트 개최 및 청렴실천 결의대회</h3>
-    </a>
-  </div>
+<section id="gallery">
+<h2 class="section-title">강의 현장</h2>
+<p class="section-desc">기업, 공공기관, 대학, 병원 등 다양한 현장에서 검증된 강의 경험</p>
+<div class="gallery">
+<img src="lecture1.jpg.png" alt="강의 현장 사진 1">
+<img src="lecture2.jpg.png" alt="강의 현장 사진 2">
+<img src="lecture3.jpg.png" alt="강의 현장 사진 3">
+<img src="lecture4.jpg.png" alt="강의 현장 사진 4">
+<img src="lecture5.jpg.png" alt="강의 현장 사진 5">
+</div>
 </section>
 
-<section id="videos" class="white">
-  <h2 class="section-title">강의 영상</h2>
-  <p class="section-desc">주요 강의 콘텐츠를 영상으로 확인하실 수 있습니다.</p>
+<section id="press" class="white">
+<h2 class="section-title">언론보도 및 주요 활동</h2>
+<p class="section-desc">AI, 청렴, 리더십, 공감 커뮤니케이션, 인문학 교육 현장에서 축적된 주요 활동입니다.</p>
 
-  <div class="videos">
-    <div class="video">
-      <h3>소통리더십 강의</h3>
-      <iframe src="https://www.youtube.com/embed/nubqn5lq2PI" allowfullscreen></iframe>
-    </div>
-    <div class="video">
-      <h3>공감커뮤니케이션 강의</h3>
-      <iframe src="https://www.youtube.com/embed/F9RBrXCk5b8" allowfullscreen></iframe>
-    </div>
-    <div class="video">
-      <h3>명화인문학 강의</h3>
-      <iframe src="https://www.youtube.com/embed/WGRl5vRa_SI" allowfullscreen></iframe>
-    </div>
-    <div class="video">
-      <h3>클래식인문학 강의</h3>
-      <iframe src="https://www.youtube.com/embed/tgJ4TkIiKxg" allowfullscreen></iframe>
-    </div>
-    <div class="video">
-      <h3>조직활성화 강의</h3>
-      <iframe src="https://www.youtube.com/embed/O9Raf5RaSms" allowfullscreen></iframe>
-    </div>
-    <div class="video">
-      <h3>청렴 오락실 강의</h3>
-      <iframe src="https://www.youtube.com/embed/WTtkvm-_C_0" allowfullscreen></iframe>
-    </div>
-  </div>
+<div class="press-grid">
+<a class="press-card" href="https://www.khan.co.kr/article/202512181555002" target="_blank"><div class="press-date">2025.12.18</div><h3>집단지성, AI 시대 조직의 생존전략</h3></a>
+<a class="press-card" href="https://www.sidae.com/article/2025082716460839851" target="_blank"><div class="press-date">2025.08.27</div><h3>AI 원격 얼굴인식 범죄 대응, 인권 침해 아니다</h3></a>
+<a class="press-card" href="http://www.gbjanews.kr/default/index_view_page.php?idx=185945" target="_blank"><div class="press-date">2025.08.19</div><h3>즐기면서 배우는 청렴, 경주시 ‘청렴오락실’ 성황</h3></a>
+<a class="press-card" href="https://www.nspna.com/country/?mode=view&newsid=769362" target="_blank"><div class="press-date">2025.07.31</div><h3>경북교육청, 특수교육지원 인력 역량 강화 연수 개최</h3></a>
+<a class="press-card" href="https://daily.hankooki.com/news/articleView.html?idxno=1247464" target="_blank"><div class="press-date">2025.07.23</div><h3>아산교육지원청, 하반기 행정실장 회의 개최</h3></a>
+<a class="press-card" href="https://www.nongchuktoday.com/news/articleView.html?idxno=3926" target="_blank"><div class="press-date">2025.06.19</div><h3>국립농업박물관, 교육 프로그램 운영</h3></a>
+<a class="press-card" href="https://view.asiae.co.kr/article/2024060612255709625" target="_blank"><div class="press-date">2025.08.03</div><h3>포항시장과 함께하는 청렴 토크콘서트</h3></a>
+<a class="press-card" href="https://www.breaknews.com/1071874" target="_blank"><div class="press-date">2024.11.19</div><h3>평택시 통합방위협의회 회의 개최</h3></a>
+<a class="press-card" href="http://www.toyonet.co.kr/bbs/board.php?bo_table=news&wr_id=28425" target="_blank"><div class="press-date">2024.10.14</div><h3>송파구시설관리공단, 여성 리더 양성 교육</h3></a>
+</div>
 </section>
 
-<section>
-  <h2 class="section-title">연결 채널</h2>
-  <p class="section-desc">블로그, 유튜브, 저서 정보를 통해 교육 콘텐츠와 전문성을 더 깊이 확인할 수 있습니다.</p>
+<section id="videos">
+<h2 class="section-title">강의 영상</h2>
+<p class="section-desc">주요 강의 콘텐츠를 영상으로 확인하실 수 있습니다.</p>
 
-  <div class="channels">
-    <a class="channel" href="https://blog.naver.com/hr_jasonlee" target="_blank">네이버 블로그</a>
-    <a class="channel" href="https://www.youtube.com/channel/UCr6EQxSkWiNmDn9S8FNzSYA" target="_blank">유튜브 채널</a>
-    <a class="channel" href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjky&x_csa=%7B%22workType%22%3A%22book%22%2C%22fromUi%22%3A%22kb%22%7D&pkid=1&os=31529684&qvt=0&query=%EC%9D%B4%EC%A4%80%EC%98%A4%20%EB%8F%84%EC%84%9C" target="_blank">저서 보기</a>
-    <a class="channel" href="mailto:leejunohkorea@gmail.com">이메일 문의</a>
-  </div>
+<div class="videos">
+<div class="video"><h3>소통리더십 강의</h3><iframe src="https://www.youtube.com/embed/nubqn5lq2PI" allowfullscreen></iframe></div>
+<div class="video"><h3>공감커뮤니케이션 강의</h3><iframe src="https://www.youtube.com/embed/F9RBrXCk5b8" allowfullscreen></iframe></div>
+<div class="video"><h3>명화인문학 강의</h3><iframe src="https://www.youtube.com/embed/WGRl5vRa_SI" allowfullscreen></iframe></div>
+<div class="video"><h3>클래식인문학 강의</h3><iframe src="https://www.youtube.com/embed/tgJ4TkIiKxg" allowfullscreen></iframe></div>
+<div class="video"><h3>조직활성화 강의</h3><iframe src="https://www.youtube.com/embed/O9Raf5RaSms" allowfullscreen></iframe></div>
+<div class="video"><h3>청렴 오락실 강의</h3><iframe src="https://www.youtube.com/embed/WTtkvm-_C_0" allowfullscreen></iframe></div>
+</div>
+</section>
+
+<section class="white">
+<h2 class="section-title">연결 채널</h2>
+<p class="section-desc">블로그, 유튜브, 저서 정보를 통해 교육 콘텐츠와 전문성을 더 깊이 확인할 수 있습니다.</p>
+<div class="channels">
+<a class="channel" href="https://blog.naver.com/hr_jasonlee" target="_blank">네이버 블로그</a>
+<a class="channel" href="https://www.youtube.com/channel/UCr6EQxSkWiNmDn9S8FNzSYA" target="_blank">유튜브 채널</a>
+<a class="channel" href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjky&x_csa=%7B%22workType%22%3A%22book%22%2C%22fromUi%22%3A%22kb%22%7D&pkid=1&os=31529684&qvt=0&query=%EC%9D%B4%EC%A4%80%EC%98%A4%20%EB%8F%84%EC%84%9C" target="_blank">저서 보기</a>
+<a class="channel" href="mailto:leejunohkorea@gmail.com">이메일 문의</a>
+</div>
 </section>
 
 <section id="contact" class="contact">
-  <h2 class="section-title">교육 문의</h2>
-  <p>기업교육, 공공기관 교육, 대학 특강, 조직활성화 워크숍 문의를 남겨주세요.</p>
-  <div class="btns" style="justify-content:center;">
-    <a class="btn" href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">네이버폼으로 문의하기</a>
-    <a class="btn secondary" href="https://www.youtube.com/channel/UCr6EQxSkWiNmDn9S8FNzSYA" target="_blank">강의 영상 더보기</a>
-  </div>
+<h2 class="section-title">교육 문의</h2>
+<p>기업교육, 공공기관 교육, 대학 특강, 조직활성화 워크숍 문의를 남겨주세요.</p>
+<div class="btns" style="justify-content:center;">
+<a class="btn" href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">네이버폼으로 문의하기</a>
+<a class="btn secondary" href="https://www.youtube.com/channel/UCr6EQxSkWiNmDn9S8FNzSYA" target="_blank">강의 영상 더보기</a>
+</div>
 </section>
 
 <footer>
-  © Good Insight · Lee Junoh. All Rights Reserved.
+© Good Insight · Lee Junoh. All Rights Reserved.
 </footer>
 
 </body>
