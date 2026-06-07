@@ -99,7 +99,30 @@ section{padding:72px 7%}
 .contact{background:linear-gradient(135deg,#0f172a,#111827);color:white;text-align:center}
 .contact .section-title{color:white}
 .contact p{color:rgba(255,255,255,.82)}
-footer{background:white;text-align:center;padding:30px;color:#6b7280;font-size:14px}
+
+.contact-buttons{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px;max-width:980px;margin-left:auto;margin-right:auto}
+.contact-btn{display:flex;justify-content:center;align-items:center;min-height:58px;padding:16px 18px;border-radius:18px;font-size:17px;font-weight:900;color:white;box-shadow:0 12px 28px rgba(0,0,0,.14);transition:.25s}
+.contact-btn:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(0,0,0,.2)}
+.contact-btn.form{background:#03c75a}
+.contact-btn.kakao{background:#FEE500;color:#191919}
+.contact-btn.call{background:#2563eb}
+.contact-btn.sms{background:#7c3aed}
+.btn.kakao{background:#FEE500;border-color:#FEE500;color:#191919}
+.btn.call{background:#2563eb;border-color:#2563eb;color:white}
+.btn.sms{background:#7c3aed;border-color:#7c3aed;color:white}
+
+.footer-info{background:#0f172a;color:white;padding:46px 7% 24px}
+.footer-inner{display:flex;justify-content:space-between;gap:34px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:26px}
+.footer-inner strong{font-size:25px;color:#67e8f9}
+.footer-inner p{margin:7px 0;color:rgba(255,255,255,.82)}
+.footer-detail a{color:#67e8f9;font-weight:900}
+.footer-contact-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.footer-mini-btn{display:inline-block;padding:9px 13px;border-radius:999px;background:rgba(255,255,255,.1);color:white;font-weight:800}
+.footer-mini-btn.kakao{background:#FEE500;color:#191919}
+.footer-mini-btn.call{background:#2563eb}
+.footer-mini-btn.sms{background:#7c3aed}
+.copyright{text-align:center;color:rgba(255,255,255,.55);font-size:14px;padding-top:20px}
+
 
 @media(max-width:1024px){
 .stats,.press-grid{grid-template-columns:repeat(2,1fr)}
@@ -125,6 +148,11 @@ section{padding:52px 5%}
 .timeline-item{text-align:left}
 .dot{margin-left:0}
 .education-note{text-align:left}
+.contact-buttons{grid-template-columns:1fr}
+.contact-btn{width:100%}
+.footer-inner{flex-direction:column}
+.footer-contact-row{flex-direction:column}
+.footer-mini-btn{text-align:center}
 }
 </style>
 </head>
@@ -152,8 +180,11 @@ section{padding:52px 5%}
 <h1>조직의 성장,<br>리더의 변화,<br>그리고 교육의 감동</h1>
 <p>AI, 리더십, 조직소통, 감정관리, 예술인문학을 기반으로 기업과 공공기관의 성장을 돕는 HRD 전문 교육을 제공합니다.</p>
 <div class="btns">
-<a class="btn" href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">교육 문의하기</a>
-<a class="btn secondary" href="https://blog.naver.com/hr_jasonlee" target="_blank">블로그 보기</a>
+<a class="btn" href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">📝 교육 문의</a>
+<a class="btn kakao" href="https://open.kakao.com/o/seizym1g" target="_blank">💬 카톡 1:1 문의</a>
+<a class="btn call" href="tel:01033886447">📞 전화 걸기</a>
+<a class="btn sms" href="sms:01033886447">✉️ 문자 보내기</a>
+<a class="btn secondary" href="#videos">강의영상 보기</a>
 </div>
 </div>
 </section>
@@ -356,6 +387,7 @@ section{padding:52px 5%}
 <a href="https://blog.naver.com/hr_jasonlee" target="_blank" class="link-card"><div class="icon">📚</div><h3>네이버 블로그</h3><p>교육 칼럼 및 콘텐츠</p></a>
 <a href="https://www.youtube.com/channel/UCr6EQxSkWiNmDn9S8FNzSYA" target="_blank" class="link-card"><div class="icon">🎥</div><h3>유튜브 채널</h3><p>강의 영상 모음</p></a>
 <a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjky&x_csa=%7B%22workType%22%3A%22book%22%2C%22fromUi%22%3A%22kb%22%7D&pkid=1&os=31529684&qvt=0&query=%EC%9D%B4%EC%A4%80%EC%98%A4%20%EB%8F%84%EC%84%9C" target="_blank" class="link-card"><div class="icon">📖</div><h3>저서 보기</h3><p>출간 도서 정보</p></a>
+<a href="https://open.kakao.com/o/seizym1g" target="_blank" class="link-card"><div class="icon">💬</div><h3>카카오톡 문의</h3><p>빠른 1:1 상담</p></a>
 <a href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank" class="link-card"><div class="icon">✉️</div><h3>교육 문의</h3><p>상담 및 강의 요청</p></a>
 </div>
 </section>
@@ -363,9 +395,13 @@ section{padding:52px 5%}
 <section id="contact" class="contact">
 <h2 class="section-title">교육 문의</h2>
 <p>기업교육, 공공기관 교육, 대학 특강, 조직활성화 워크숍 문의를 남겨주세요.</p>
-<div class="btns" style="justify-content:center;">
-<a class="btn" href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">네이버폼으로 문의하기</a>
-<a class="btn secondary" href="https://www.youtube.com/channel/UCr6EQxSkWiNmDn9S8FNzSYA" target="_blank">강의 영상 더보기</a>
+<p>빠른 상담을 원하시면 카카오톡, 전화, 문자 문의를 이용해 주세요.</p>
+
+<div class="contact-buttons">
+<a class="contact-btn form" href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">📝 네이버폼 문의</a>
+<a class="contact-btn kakao" href="https://open.kakao.com/o/seizym1g" target="_blank">💬 카카오톡 1:1 문의</a>
+<a class="contact-btn call" href="tel:01033886447">📞 전화 걸기</a>
+<a class="contact-btn sms" href="sms:01033886447">✉️ 문자 보내기</a>
 </div>
 </section>
 
@@ -374,17 +410,20 @@ section{padding:52px 5%}
     <div>
       <strong>GOOD INSIGHT</strong>
       <p>조직의 성장, 리더의 변화, 그리고 교육의 감동</p>
+      <p>경영컨설팅 · HRD컨설팅 · 기업교육 전문기관</p>
+      <p>AI · 리더십 · 조직소통 · 감정관리 · 예술인문학</p>
     </div>
 
     <div class="footer-detail">
       <p><b>회사명</b> (주)굿인사이트</p>
       <p><b>대표</b> 이준오</p>
       <p><b>이메일</b> leejunohkorea@gmail.com</p>
-      <p><b>교육문의</b> 
-        <a href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">
-          네이버폼 바로가기
-        </a>
-      </p>
+      <p><b>교육문의</b> <a href="https://form.naver.com/response/iCLDEo2SuPqfYrxwzQSKYw" target="_blank">네이버폼 바로가기</a></p>
+      <div class="footer-contact-row">
+        <a class="footer-mini-btn kakao" href="https://open.kakao.com/o/seizym1g" target="_blank">💬 카카오톡 문의</a>
+        <a class="footer-mini-btn call" href="tel:01033886447">📞 전화 걸기</a>
+        <a class="footer-mini-btn sms" href="sms:01033886447">✉️ 문자 보내기</a>
+      </div>
     </div>
   </div>
 
