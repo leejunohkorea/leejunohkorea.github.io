@@ -144,6 +144,35 @@ section{padding:72px 7%}
 .footer-detail a{color:#67e8f9;font-weight:900}
 .copyright{text-align:center;color:rgba(255,255,255,.55);font-size:14px;padding-top:20px}
 
+
+
+.resource-section{
+  background:linear-gradient(135deg,#071326,#0b1f3a,#0f294d);
+  text-align:center;
+  padding:34px 7%;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.resource-btn{
+  border:0;
+  background:#ff6b00;
+  color:white;
+  font-size:20px;
+  font-weight:900;
+  padding:16px 34px;
+  border-radius:999px;
+  cursor:pointer;
+  box-shadow:0 12px 28px rgba(0,0,0,.22);
+  transition:.25s;
+}
+.resource-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 18px 34px rgba(0,0,0,.28);
+}
+@media(max-width:760px){
+  .resource-section{padding:30px 5%;}
+  .resource-btn{width:100%;font-size:18px;padding:15px 20px;}
+}
+
 @media(max-width:1024px){
 .stats,.press-grid{grid-template-columns:repeat(2,1fr)}
 .gallery,.program-grid,.education-grid{grid-template-columns:repeat(2,1fr)}
@@ -463,6 +492,12 @@ section{padding:52px 5%}
 </div>
 </section>
 
+
+
+<section class="resource-section">
+  <button class="resource-btn" onclick="openResourceRoom()">📂 자료실</button>
+</section>
+
 <footer class="footer-info">
 <div class="footer-inner">
 <div><strong>GOOD INSIGHT</strong><p>사람의 변화를 이해하고<br>조직의 성장을 설계합니다.</p><p>AI · 리더십 · 조직소통<br>감정관리 · 청렴윤리 · 예술인문학 전문 교육기관</p></div>
@@ -472,6 +507,18 @@ section{padding:52px 5%}
 </div>
 <div class="copyright">© Good Insight · Lee Junoh. All Rights Reserved.</div>
 </footer>
+
+
+<script>
+function openResourceRoom(){
+  const password = prompt("비밀번호를 입력하세요.");
+  if(password === "1004"){
+    window.open("https://padlet.com/leejunohkorea/padlet-t8qb1k0viszyngoc", "_blank");
+  } else if(password !== null){
+    alert("비밀번호가 올바르지 않습니다.");
+  }
+}
+</script>
 
 </body>
 </html>
