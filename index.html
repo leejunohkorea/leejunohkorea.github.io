@@ -259,7 +259,30 @@ section{padding:52px 5%}
 .contact-buttons{grid-template-columns:1fr}
 .contact-btn{width:100%}
 .footer-inner{flex-direction:column}
-}</style>
+}
+
+/* Naver blog latest posts */
+.blog-feed-section{background:#f5f8fb}
+.blog-source{margin:36px 0 46px}
+.blog-source-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+.blog-source-head h3{font-size:24px;color:#0f3558;margin:0}
+.blog-source-head a{color:#0e7490;font-weight:800;text-decoration:none}
+.blog-post-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.blog-post-card{display:block;background:white;border:1px solid #e2e8f0;border-radius:15px;overflow:hidden;color:#1f2937;text-decoration:none;box-shadow:0 8px 22px rgba(15,23,42,.06);transition:.2s}
+.blog-post-card:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(15,23,42,.12)}
+.blog-post-source{display:block;color:#64748b;font-size:12px;font-weight:800;margin-bottom:6px}
+.blog-more-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin:26px 0 4px}
+.blog-more-links a{color:#0e7490;font-weight:800;text-decoration:none}
+.blog-post-date{display:block;color:#94a3b8;font-size:13px;margin-top:8px}
+.blog-post-image{display:block;width:100%;aspect-ratio:1.78;object-fit:cover;background:#e8eef3}
+.blog-post-copy{padding:15px 16px 17px}
+.blog-post-source{display:block;color:#64748b;font-size:12px;font-weight:800;margin-bottom:5px}
+.blog-post-card h4{font-size:17px;line-height:1.45;margin:0 0 10px;color:#102a43;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.blog-post-card p{font-size:14px;line-height:1.65;color:#64748b;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.blog-feed-status{text-align:center;color:#64748b;padding:22px;background:#fff;border-radius:16px}
+@media(max-width:760px){.blog-post-grid{grid-template-columns:1fr}.blog-source-head{align-items:flex-start;flex-direction:column}.blog-source-head h3{font-size:21px}}
+
+</style>
 </head>
 
 <body>
@@ -275,6 +298,7 @@ section{padding:52px 5%}
 <a href="#gallery">강의현장</a>
 <a href="#press">언론보도</a>
 <a href="#videos">강의영상</a>
+<a href="#blog-posts">블로그</a>
 <a href="#contact">교육문의</a>
 </nav>
 </header>
@@ -469,6 +493,15 @@ section{padding:52px 5%}
 </div>
 </section>
 
+
+<section id="blog-posts" class="blog-feed-section">
+<h2 class="section-title">최신 블로그 글</h2>
+<p class="section-desc">세 블로그 주소의 최신 글을 각각 3개씩 모았습니다. 제목을 누르면 네이버 블로그 원문으로 이동합니다.</p>
+<div id="blog-feed-status" class="blog-feed-status" role="status">최신 글을 불러오는 중입니다.</div>
+<div id="blog-post-grid" class="blog-post-grid"></div>
+<div class="blog-more-links"><a href="https://blog.naver.com/hr_jasonlee" target="_blank" rel="noopener noreferrer">이준오 블로그 더 보기 ↗</a><a href="https://blog.naver.com/creatents" target="_blank" rel="noopener noreferrer">creatents 블로그 더 보기 ↗</a></div>
+</section>
+
 <section class="white">
 <h2 class="section-title">연결 채널</h2><p class="section-desc">블로그, 유튜브, 저서, 교육문의 채널을 통해 굿인사이트의 콘텐츠와 전문성을 확인할 수 있습니다.</p>
 <div class="link-grid">
@@ -518,6 +551,39 @@ function openResourceRoom(){
     alert("비밀번호가 올바르지 않습니다.");
   }
 }
+</script>
+
+
+<script>
+(async function loadNaverBlogPosts(){
+  const status = document.getElementById('blog-feed-status');
+  const grid = document.getElementById('blog-post-grid');
+  try {
+    const response = await fetch('./blog-posts.json?ts=' + Date.now(), {cache:'no-store'});
+    if (!response.ok) throw new Error('feed unavailable');
+    const data = await response.json();
+    const posts = (data.posts || []).slice(0, 9);
+    if (!posts.length) throw new Error('no posts');
+    status.remove();
+    posts.forEach(post => {
+      const card = document.createElement('a');
+      card.className = 'blog-post-card';
+      try { const u = new URL(post.url, location.href); card.href = ['http:', 'https:'].includes(u.protocol) ? u.href : '#blog-posts'; } catch (_) { card.href = '#blog-posts'; }
+      card.target = '_blank'; card.rel = 'noopener noreferrer';
+      if (post.image) {
+        const img = document.createElement('img'); img.className = 'blog-post-image'; img.src = post.image; img.alt = ''; img.loading = 'lazy';
+        img.onerror = () => { img.remove(); }; card.append(img);
+      }
+      const copy = document.createElement('div'); copy.className = 'blog-post-copy';
+      const source = document.createElement('span'); source.className = 'blog-post-source'; source.textContent = post.source || '네이버 블로그';
+      const heading = document.createElement('h4'); heading.textContent = post.title || '제목 없는 글';
+      const date = document.createElement('span'); date.className = 'blog-post-date'; date.textContent = post.dateLabel || '';
+      copy.append(source, heading, date); card.append(copy); grid.append(card);
+    });
+  } catch (error) {
+    status.textContent = '최신 글을 불러오지 못했습니다. 아래 블로그 링크에서 글을 확인해 주세요.';
+  }
+})();
 </script>
 
 </body>
