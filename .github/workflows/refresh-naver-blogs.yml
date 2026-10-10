@@ -25,18 +25,31 @@ jobs:
     steps:
       - name: Check out website
         uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
+
       - name: Fetch latest Naver posts
         run: python scripts/fetch_naver_blogs.py
+
+      - name: Stage website files
+        run: |
+          mkdir -p _site
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name '.github' ! -name '_site' -exec cp -a {} _site/ \;
+          test -s _site/index.html
+          test -s _site/blog-posts.json
+          python -c "import json; d=json.load(open('_site/blog-posts.json', encoding='utf-8')); assert len(d.get('posts', [])) == 9; print('Verified 9 blog cards in deployed site folder')"
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
+
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
+
       - name: Publish website
         id: deployment
         uses: actions/deploy-pages@v4
