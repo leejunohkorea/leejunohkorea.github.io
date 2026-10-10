@@ -94,3 +94,54 @@ def rss_image(item):
 
 
 def page_thumbnail(post_url):
+    if not post_url.startswith("https://"):
+        return ""
+    request = urllib.request.Request(post_url, headers={"User-Agent": USER_AGENT})
+    try:
+        with urllib.request.urlopen(request, timeout=12) as response:
+            page = response.read(1_500_000).decode("utf-8", errors="replace")
+        parser = MetaImageParser()
+        parser.feed(page)
+        return normalize_image(parser.images[0]) if parser.images else ""
+    except Exception:
+        # Naver may block article HTML requests; keep the title/link card regardless.
+        return ""
+
+
+def fetch(blog):
+    rss_url = f"https://rss.blog.naver.com/{blog['id']}.xml"
+    request = urllib.request.Request(rss_url, headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(request, timeout=25) as response:
+        root = ET.fromstring(response.read())
+    posts = []
+    for item in root.iter():
+        if local_name(item.tag) != "item":
+            continue
+        title = child_text(item, "title")
+        link = child_text(item, "link") or blog["url"]
+        raw_date = child_text(item, "pubdate")
+        try:
+            published = parsedate_to_datetime(raw_date)
+            if published.tzinfo is None:
+                published = published.replace(tzinfo=timezone.utc)
+            date_label = published.astimezone().strftime("%Y. %m. %d.")
+        except (TypeError, ValueError, OverflowError):
+            published = datetime.min.replace(tzinfo=timezone.utc)
+            date_label = ""
+        description = child_text(item, "description") or child_text(item, "encoded")
+        excerpt, image = parse_content(description)
+        image = image or rss_image(item) or page_thumbnail(link)
+        posts.append({"title": title, "url": link, "source": blog["name"], "dateLabel": date_label,
+                      "published": published.isoformat(), "excerpt": excerpt, "image": image})
+        if len(posts) == 3:
+            break
+    return posts
+
+
+posts = []
+for blog in BLOGS:
+    posts.extend(fetch(blog))
+result = {"updatedAt": datetime.now(timezone.utc).isoformat(), "blogs": BLOGS, "posts": posts}
+Path("blog-posts.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+thumbnail_count = sum(bool(post["image"]) for post in posts)
+print(f"Wrote {len(posts)} cards from {len(BLOGS)} supplied blog addresses; found {thumbnail_count} thumbnails")
